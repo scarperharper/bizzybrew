@@ -1,0 +1,50 @@
+name: Bizzybrew
+on: [push]
+
+permissions:
+    contents: read
+    deployments: write
+    id-token: write
+
+jobs:
+    deploy:
+        name: Deploy to AWS
+        timeout-minutes: 30
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v6
+
+            - name: Setup node.js
+              uses: actions/setup-node@v6
+              with:
+                  node-version: 'lts/*'
+                  check-latest: true
+
+            - name: Cache node modules
+              id: cache-npm
+              uses: actions/cache@v4
+              env:
+                  cache-name: cache-node-modules
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-build-${{ env.cache-name }}-${{
+                      hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-build-${{ env.cache-name }}-
+                      ${{ runner.os }}-build-
+                      ${{ runner.os }}-
+
+            - name: Enable Corepack
+              run: corepack enable && corepack prepare pnpm@latest
+
+            - name: Configure AWS Credentials
+              uses: aws-actions/configure-aws-credentials@main
+              with:
+                  role-to-assume: arn:aws:iam::089180151028:role/deploy-to-sst-role
+                  aws-region: eu-west-2
+
+            - name: Install dependencies
+              run: pnpm i --frozen-lockfile
+
+            - name: Build and Publish
+              run: npx sst deploy
