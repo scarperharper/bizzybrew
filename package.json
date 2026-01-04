@@ -91,7 +91,7 @@
 		"@storybook/react": "^8.6.15",
 		"@storybook/react-vite": "^8.6.15",
 		"@storybook/test": "^8.6.15",
-		"@types/node": "^22",
+		"@types/node": "^25",
 		"@types/react": "^19.2.7",
 		"@types/react-dom": "^19.2.3",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
