@@ -27,7 +27,7 @@ export default function App() {
 					enableSystem
 					disableTransitionOnChange
 				>
-					<div className="hidden flex-col md:flex">
+					<div className="flex-col md:flex">
 						<div className="container mx-auto">
 							<Header />
 							<Outlet />
