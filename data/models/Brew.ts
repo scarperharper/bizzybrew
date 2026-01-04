@@ -1,0 +1,31 @@
+import { Entity } from "./Entity";
+
+export class Brew extends Entity {
+  name: string;
+  brew_date: Date;
+  total_cost: number;
+  duty: number;
+  income: number;
+
+  constructor(data: Brew) {
+    super(data);
+    this.name = data.name;
+    this.brew_date = data.brew_date;
+    this.total_cost = data.total_cost;
+    this.duty = data.duty;
+    this.income = data.income;
+  }
+}
+
+export class RecentBrew extends Brew {
+  view_recent_usage_summary: {
+    group_name: string;
+    sum_cost: number;
+    sum_amount: number;
+  }[];
+
+  constructor(data: RecentBrew) {
+    super(data);
+    this.view_recent_usage_summary = data.view_recent_usage_summary;
+  }
+}
