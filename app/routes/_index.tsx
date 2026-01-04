@@ -182,7 +182,7 @@ export default function Index() {
 			<div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 				<Card className="col-span-2">
 					<CardHeader>
-						<CardTitle>Recent Brews</CardTitle>
+						<CardTitle>Brews</CardTitle>
 					</CardHeader>
 					<CardContent className="pl-2">
 						<RecentBrewsPanel recentBrews={recentBrews} />
@@ -190,7 +190,7 @@ export default function Index() {
 				</Card>
 				<Card className="col-span-2">
 					<CardHeader>
-						<CardTitle>Recent Receipts</CardTitle>
+						<CardTitle>Receipts</CardTitle>
 						{/* <CardDescription>You made 265 sales this month.</CardDescription> */}
 					</CardHeader>
 					<CardContent>
