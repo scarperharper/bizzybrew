@@ -50,7 +50,6 @@ export async function getBrewById(
 
 export async function insertOneBrew(
 	supabaseClient: SupabaseClient,
-	userId: string,
 	brew: Partial<Brew>
 ): Promise<ApiResult<Brew>> {
 	const result = await supabaseClient

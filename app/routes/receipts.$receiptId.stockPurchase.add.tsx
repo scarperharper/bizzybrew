@@ -8,10 +8,16 @@ import {
 	DrawerTitle,
 } from '@/components/ui/drawer';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
-import { redirect, Form, useActionData, useLoaderData, useNavigate } from 'react-router';
+import {
+	redirect,
+	Form,
+	useActionData,
+	useLoaderData,
+	useNavigate,
+} from 'react-router';
 import invariant from 'tiny-invariant';
 import { z } from 'zod';
-import { getZodConstraint, parseWithZod } from '@conform-to/zod';
+import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
@@ -113,7 +119,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			`/receipts/${(created.data as StockPurchase).receipt_id}`
 		);
 	} else if (intent == 'createStockLine') {
-		const submission = parseWithZod(formData, { schema: createStockLineSchema });
+		const submission = parseWithZod(formData, {
+			schema: createStockLineSchema,
+		});
 		if (submission.status !== 'success') {
 			return submission.reply();
 		}
@@ -206,7 +214,11 @@ export default function AddStockUsage() {
 				value: created,
 			});
 		}
-	}, [created, createStockLineForm, createStockLineFields.stockLineName.name]);
+	}, [
+		created,
+		createStockLineForm,
+		createStockLineFields.stockLineName.name,
+	]);
 
 	return (
 		<>
@@ -227,7 +239,10 @@ export default function AddStockUsage() {
 						</DrawerHeader>
 
 						<DrawerBody>
-							<InputHidden name="receipt_id" field={purchaseFields.receipt_id} />
+							<InputHidden
+								name="receipt_id"
+								field={purchaseFields.receipt_id}
+							/>
 							<Combobox
 								options={stockLineOptions}
 								label="Ingredient"
@@ -244,9 +259,18 @@ export default function AddStockUsage() {
 								label="Purchase Date"
 								field={purchaseFields.purchase_date}
 							/>
-							<Input label="Amount" field={purchaseFields.amount} />
-							<CurrencyInput label="Cost" field={purchaseFields.cost} />
-							<Input label="Details" field={purchaseFields.details} />
+							<Input
+								label="Amount"
+								field={purchaseFields.amount}
+							/>
+							<CurrencyInput
+								label="Cost"
+								field={purchaseFields.cost}
+							/>
+							<Input
+								label="Details"
+								field={purchaseFields.details}
+							/>
 						</DrawerBody>
 						<DrawerFooter>
 							<SubmitButton name="intent" value="addPurchase" />
@@ -277,7 +301,10 @@ export default function AddStockUsage() {
 						className="flex flex-col flex-1"
 						{...getFormProps(createStockLineForm)}
 					>
-						<Input label="Name" field={createStockLineFields.stockLineName} />
+						<Input
+							label="Name"
+							field={createStockLineFields.stockLineName}
+						/>
 						<Select
 							label="Stock Group"
 							options={stockGroupOptions}

@@ -8,9 +8,16 @@ import {
 	DrawerTitle,
 } from '@/components/ui/drawer';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
-import { redirect, Form, useLoaderData, useNavigate, useSubmit, useActionData } from 'react-router';
+import {
+	redirect,
+	Form,
+	useLoaderData,
+	useNavigate,
+	useSubmit,
+	useActionData,
+} from 'react-router';
 import { z } from 'zod';
-import { getZodConstraint, parseWithZod } from '@conform-to/zod';
+import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { Combobox } from '@/components/local/combobox';
@@ -57,7 +64,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	const intent = formData.get('intent');
 
 	if (intent == 'createCustomer') {
-		const submission = parseWithZod(formData, { schema: createCustomerSchema });
+		const submission = parseWithZod(formData, {
+			schema: createCustomerSchema,
+		});
 		if (submission.status !== 'success') {
 			return submission.reply();
 		}
@@ -127,7 +136,10 @@ export default function AddSale() {
 					</DrawerHeader>
 
 					<DrawerBody>
-						<DatePicker label="Sale Date" field={fields.created_at} />
+						<DatePicker
+							label="Sale Date"
+							field={fields.created_at}
+						/>
 						<Combobox
 							label="Customer"
 							options={customersOptions}

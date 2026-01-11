@@ -8,10 +8,16 @@ import {
 	DrawerTitle,
 } from '@/components/ui/drawer';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
-import { redirect, Form, useLoaderData, useNavigate, useActionData } from 'react-router';
+import {
+	redirect,
+	Form,
+	useLoaderData,
+	useNavigate,
+	useActionData,
+} from 'react-router';
 import invariant from 'tiny-invariant';
 import { z } from 'zod';
-import { getZodConstraint, parseWithZod } from '@conform-to/zod';
+import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
@@ -170,7 +176,10 @@ export default function EditProduct() {
 						/>
 						<Input label="Amount" field={fields.amount} />
 						<Input label="Remaining" field={fields.remaining} />
-						<CurrencyInput label="List Price" field={fields.list_price} />
+						<CurrencyInput
+							label="List Price"
+							field={fields.list_price}
+						/>
 					</DrawerBody>
 					<DrawerFooter>
 						<SubmitButton

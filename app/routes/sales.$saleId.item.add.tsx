@@ -8,9 +8,15 @@ import {
 	DrawerTitle,
 } from '@/components/ui/drawer';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
-import { redirect, Form, useLoaderData, useNavigate, useActionData } from 'react-router';
+import {
+	redirect,
+	Form,
+	useLoaderData,
+	useNavigate,
+	useActionData,
+} from 'react-router';
 import { z } from 'zod';
-import { getZodConstraint, parseWithZod } from '@conform-to/zod';
+import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { Combobox, ComboboxOption } from '@/components/local/combobox';
@@ -130,7 +136,10 @@ export default function AddSaleItem() {
 
 					<DrawerBody>
 						<InputHidden name="sale_id" field={fields.sale_id} />
-						<InputHidden name="created_at" field={fields.created_at} />
+						<InputHidden
+							name="created_at"
+							field={fields.created_at}
+						/>
 						<Combobox
 							label="Product"
 							options={productOptions}
@@ -139,11 +148,16 @@ export default function AddSaleItem() {
 							onSelectOption={(option: ComboboxOption) => {
 								form.update({
 									name: fields.unit_price.name,
-									value: (option.entity as Product).list_price.toString(),
+									value: (
+										option.entity as Product
+									).list_price.toString(),
 								});
 							}}
 						/>
-						<CurrencyInput label="Price" field={fields.unit_price} />
+						<CurrencyInput
+							label="Price"
+							field={fields.unit_price}
+						/>
 						<Input label="Quantity" field={fields.quantity} />
 					</DrawerBody>
 					<DrawerFooter>

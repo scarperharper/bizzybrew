@@ -23,7 +23,7 @@ import {
 import { Receipt } from '@/data/models/Receipt';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
 import { z } from 'zod';
-import { getZodConstraint, parseWithZod } from '@conform-to/zod';
+import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps, getInputProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { SubmitButton } from '@/components/form-elements/submit';

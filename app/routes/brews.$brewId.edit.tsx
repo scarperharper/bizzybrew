@@ -9,11 +9,10 @@ import {
 } from '@/components/ui/drawer';
 import { getBrewById, insertOneBrew, updateOneBrew } from '@/data/api/BrewApi';
 import { Brew } from '@/data/models/Brew';
-import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
-import { redirect, Form, useLoaderData, useNavigate, useActionData } from 'react-router';
+
 import invariant from 'tiny-invariant';
 import { z } from 'zod';
-import { getZodConstraint, parseWithZod } from '@conform-to/zod';
+import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
@@ -21,6 +20,15 @@ import { DatePicker } from '@/components/form-elements/date-picker';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
+import type {
+	ActionFunctionArgs,
+	LoaderFunctionArgs,
+	redirect,
+	Form,
+	useLoaderData,
+	useNavigate,
+	useActionData,
+} from 'react-router';
 
 const schema = z.object({
 	id: z.coerce.number().optional(),
@@ -73,7 +81,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			duty,
 		};
 
-		const updated = await updateOneBrew(supabaseClient, userId, update);
+		const updated = await updateOneBrew(supabaseClient, update);
 		return redirect(`/brews/${(updated.data as Brew).id}`);
 	} else {
 		const insert: Partial<Brew> = {
@@ -135,8 +143,14 @@ export default function Editbrew() {
 					<DrawerBody>
 						<InputHidden name="id" field={fields.id} />
 						<Input label="Brew Name" field={fields.name} />
-						<DatePicker label="Brew Date" field={fields.brew_date} />
-						<CurrencyInput label="Duty Amount" field={fields.duty} />
+						<DatePicker
+							label="Brew Date"
+							field={fields.brew_date}
+						/>
+						<CurrencyInput
+							label="Duty Amount"
+							field={fields.duty}
+						/>
 					</DrawerBody>
 					<DrawerFooter>
 						<SubmitButton />
