@@ -13,7 +13,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	const brew = await insertOneBrew(supabaseClient, userId, {
+	const brew = await insertOneBrew(supabaseClient, {
 		name: 'New Brew',
 		brew_date: new Date(),
 	});

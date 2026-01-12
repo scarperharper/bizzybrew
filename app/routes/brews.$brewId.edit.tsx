@@ -9,7 +9,6 @@ import {
 } from '@/components/ui/drawer';
 import { getBrewById, insertOneBrew, updateOneBrew } from '@/data/api/BrewApi';
 import { Brew } from '@/data/models/Brew';
-
 import invariant from 'tiny-invariant';
 import { z } from 'zod';
 import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
@@ -20,9 +19,8 @@ import { DatePicker } from '@/components/form-elements/date-picker';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
-import type {
-	ActionFunctionArgs,
-	LoaderFunctionArgs,
+import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
+import {
 	redirect,
 	Form,
 	useLoaderData,
@@ -90,7 +88,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			duty,
 		};
 
-		const inserted = await insertOneBrew(supabaseClient, userId, insert);
+		const inserted = await insertOneBrew(supabaseClient, insert);
 		return redirect(`/brews/${(inserted.data as Brew).id}`);
 	}
 };

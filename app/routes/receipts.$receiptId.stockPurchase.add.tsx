@@ -18,7 +18,11 @@ import {
 import invariant from 'tiny-invariant';
 import { z } from 'zod';
 import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
-import { useForm, getFormProps } from '@conform-to/react';
+import {
+	useForm,
+	getFormProps,
+	type SubmissionResult,
+} from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
 import { DatePicker } from '@/components/form-elements/date-picker';
@@ -48,7 +52,7 @@ import {
 	DialogOverlay,
 	DialogTitle,
 } from '@/components/ui/dialog';
-import { ApiResult } from '@/data/api/ApiResult';
+import type { ApiResult } from '@/data/api/ApiResult';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
 
@@ -140,7 +144,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 export default function AddStockUsage() {
 	const { receiptResponse, stockLineSummaryResponse, stockGroupsResponse } =
 		useLoaderData<typeof loader>();
-	const lastResult = useActionData<typeof action>();
+	const lastResult = useActionData<SubmissionResult<string[]>>();
 	const receipt = receiptResponse.data as unknown as Receipt;
 	const stockLineSummary =
 		stockLineSummaryResponse.data as unknown as StockLineSummary[];
@@ -296,7 +300,6 @@ export default function AddStockUsage() {
 					</DialogHeader>
 
 					<Form
-						id="createStockLineForm"
 						method="post"
 						className="flex flex-col flex-1"
 						{...getFormProps(createStockLineForm)}
