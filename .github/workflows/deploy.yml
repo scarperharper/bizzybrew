@@ -46,5 +46,8 @@ jobs:
             - name: Install dependencies
               run: pnpm i --frozen-lockfile
 
+            - name: Show SST version
+              run: npx sst version
+
             - name: Build and Publish
               run: npx sst deploy
