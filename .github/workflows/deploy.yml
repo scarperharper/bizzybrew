@@ -49,5 +49,10 @@ jobs:
             - name: Dump environment
               run: set
 
+            - name: Remove conflicting Pulumi installations
+              run: |
+                  sudo rm -f /usr/local/bin/pulumi*
+                  rm -rf ~/.npm/_npx
+
             - name: Build and Publish
-              run: rm -rf ~/.npm/_npx && npx sst deploy
+              run: pnpm sst deploy
