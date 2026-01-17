@@ -15,7 +15,6 @@ import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
-import { DatePicker } from '@/components/form-elements/date-picker';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
@@ -47,7 +46,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const brew = await getBrewById(
 		supabaseClient,
 		userId,
-		parseInt(params.brewId)
+		parseInt(params.brewId),
 	);
 	if (!brew) {
 		throw new Response('Not Found', { status: 404 });
@@ -140,10 +139,19 @@ export default function Editbrew() {
 
 					<DrawerBody>
 						<InputHidden name="id" field={fields.id} />
-						<Input label="Brew Name" field={fields.name} />
-						<DatePicker
+						<Input
+							label="Brew Name"
+							defaultValue={fields.name.defaultValue}
+							name="name"
+							errors={fields.name.errors}
+							type="text"
+						/>
+						<Input
 							label="Brew Date"
-							field={fields.brew_date}
+							defaultValue={fields.brew_date.defaultValue}
+							name="brew_date"
+							errors={fields.brew_date.errors}
+							type="date"
 						/>
 						<CurrencyInput
 							label="Duty Amount"

@@ -25,8 +25,8 @@ import { getCustomers, insertOneCustomer } from '@/data/api/CustomerApi';
 import { Customer } from '@/data/models/Customer';
 import { insertOneSale } from '@/data/api/SaleApi';
 import { Sale } from '@/data/models/Sale';
-import { DatePicker } from '@/components/form-elements/date-picker';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { Input } from '@/components/form-elements/input';
 
 const saleSchema = z.object({
 	created_at: z.coerce.date(),
@@ -136,9 +136,12 @@ export default function AddSale() {
 					</DrawerHeader>
 
 					<DrawerBody>
-						<DatePicker
+						<Input
 							label="Sale Date"
-							field={fields.created_at}
+							key="created_date"
+							defaultValue={fields.created_at.defaultValue}
+							errors={fields.created_at.errors}
+							type="date"
 						/>
 						<Combobox
 							label="Customer"
@@ -148,7 +151,7 @@ export default function AddSale() {
 							onCreateOption={(option) => {
 								submit(
 									{ name: option, intent: 'createCustomer' },
-									{ method: 'post' }
+									{ method: 'post' },
 								);
 							}}
 						/>

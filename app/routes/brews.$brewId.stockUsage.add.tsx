@@ -21,7 +21,6 @@ import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
-import { DatePicker } from '@/components/form-elements/date-picker';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { StockUsageRequest } from '@/data/models/StockUsage';
 import { getRemainingPurchases } from '@/data/api/StockPurchaseApi';
@@ -31,6 +30,7 @@ import { Brew } from '@/data/models/Brew';
 import { addStockUsage } from '@/data/api/StockUsageApi';
 import { Combobox } from '@/components/local/combobox';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { format } from 'date-fns';
 
 const schema = z.object({
 	brew_id: z.coerce.number(),
@@ -76,7 +76,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	const created = await addStockUsage(
 		supabaseClient,
 		userId,
-		submission.value
+		submission.value,
 	);
 	const intent = formData.get('intent');
 
@@ -84,7 +84,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		return redirect(
 			`/brews/${
 				(created.data as StockUsageRequest).brew_id
-			}/stockUsage/add`
+			}/stockUsage/add`,
 		);
 	}
 	return redirect(`/brews/${(created.data as StockUsageRequest).brew_id}`);
@@ -105,9 +105,8 @@ export default function AddStockUsage() {
 		shouldRevalidate: 'onInput',
 		defaultValue: {
 			brew_id: brew.id.toString(),
-			usage_date: brew.brew_date.toString(),
+			usage_date: format(new Date(brew.brew_date), 'yyyy-MM-dd'),
 			amount: '0',
-			stock_line_id: '',
 		},
 		onValidate({ formData }) {
 			return parseWithZod(formData, { schema });
@@ -147,11 +146,20 @@ export default function AddStockUsage() {
 							guidance={''}
 							field={fields.stock_line_id}
 						/>
-						<DatePicker
+						<Input
 							label="Usage Date"
-							field={fields.usage_date}
+							name="usage_date"
+							defaultValue={fields.usage_date.defaultValue}
+							errors={fields.usage_date.errors}
+							type="date"
 						/>
-						<Input label="Amount" field={fields.amount} />
+						<Input
+							label="Amount"
+							name="amount"
+							defaultValue={fields.amount.defaultValue}
+							errors={fields.amount.errors}
+							type="number"
+						/>
 					</DrawerBody>
 					<DrawerFooter>
 						<SubmitButton

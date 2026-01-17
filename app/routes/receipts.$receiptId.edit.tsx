@@ -24,13 +24,14 @@ import { Receipt } from '@/data/models/Receipt';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
 import { z } from 'zod';
 import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
-import { useForm, getFormProps, getInputProps } from '@conform-to/react';
+import { useForm, getFormProps } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/form-elements/input';
 
 const schema = z.object({
-	id: z.number(),
+	id: z.number().optional(),
 	description: z.string(),
 	date: z.date(),
 });
@@ -47,7 +48,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	const receiptResponse = await getReceiptById(
 		supabaseClient,
 		userId,
-		parseInt(params.receiptId)
+		parseInt(params.receiptId),
 	);
 	if (!receiptResponse.success) {
 		throw new Response('Error loading receipt', { status: 404 });
@@ -74,14 +75,14 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		const updated = await updateOneReceipt(
 			supabaseClient,
 			userId,
-			submission.value
+			submission.value,
 		);
 		return redirect(`/receipts/${(updated.data as Receipt).id}`);
 	} else {
 		const inserted = await insertOneReceipt(
 			supabaseClient,
 			userId,
-			submission.value
+			submission.value,
 		);
 		return redirect(`/receipts/${(inserted.data as Receipt).id}`);
 	}
@@ -98,7 +99,9 @@ export default function EditReceipt() {
 		shouldValidate: 'onBlur',
 		shouldRevalidate: 'onInput',
 		onValidate({ formData }) {
-			return parseWithZod(formData, { schema });
+			const result = parseWithZod(formData, { schema });
+			console.log(result);
+			return result;
 		},
 	});
 
@@ -128,15 +131,19 @@ export default function EditReceipt() {
 
 					<DrawerBody>
 						<InputHidden name="id" />
-						<input
-							{...getInputProps(fields.description, {
-								type: 'text',
-							})}
+						<Input
+							name="description"
+							label="Supplier name"
+							defaultValue={fields.description.defaultValue}
+							errors={fields.description.errors}
+							type="text"
 						/>
-						<input
-							{...getInputProps(fields.date, {
-								type: 'datetime-local',
-							})}
+						<Input
+							name="date"
+							label="Purchase Date"
+							defaultValue={fields.date.defaultValue}
+							errors={fields.date.errors}
+							type="date"
 						/>
 					</DrawerBody>
 					<DrawerFooter>

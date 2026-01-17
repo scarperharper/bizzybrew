@@ -46,9 +46,6 @@ jobs:
             - name: Install dependencies
               run: pnpm i --frozen-lockfile
 
-            - name: Dump environment
-              run: set
-
             - name: Remove conflicting Pulumi installations
               run: |
                   sudo rm -f /usr/local/bin/pulumi*

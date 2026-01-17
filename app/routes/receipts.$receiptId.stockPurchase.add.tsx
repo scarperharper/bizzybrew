@@ -25,7 +25,6 @@ import {
 } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
-import { DatePicker } from '@/components/form-elements/date-picker';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { insertOneStockPurchase } from '@/data/api/StockPurchaseApi';
 import { StockPurchase } from '@/data/models/StockPurchase';
@@ -55,6 +54,7 @@ import {
 import type { ApiResult } from '@/data/api/ApiResult';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { format } from 'date-fns';
 
 const purchaseSchema = z.object({
 	receipt_id: z.coerce.number(),
@@ -120,7 +120,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			purchase_date: submission.value.purchase_date,
 		});
 		return redirect(
-			`/receipts/${(created.data as StockPurchase).receipt_id}`
+			`/receipts/${(created.data as StockPurchase).receipt_id}`,
 		);
 	} else if (intent == 'createStockLine') {
 		const submission = parseWithZod(formData, {
@@ -150,6 +150,8 @@ export default function AddStockUsage() {
 		stockLineSummaryResponse.data as unknown as StockLineSummary[];
 	const stockGroups = stockGroupsResponse.data as unknown as StockGroup[];
 
+	console.log({ receipt });
+
 	const [purchaseForm, purchaseFields] = useForm({
 		lastResult,
 		constraint: getZodConstraint(purchaseSchema),
@@ -157,7 +159,7 @@ export default function AddStockUsage() {
 		shouldRevalidate: 'onInput',
 		defaultValue: {
 			receipt_id: receipt.id.toString(),
-			purchase_date: receipt.date.toString(),
+			purchase_date: format(new Date(receipt.date), 'yyyy-MM-dd'),
 			amount: '0',
 			cost: '0',
 			details: '',
@@ -259,13 +261,23 @@ export default function AddStockUsage() {
 								}}
 							/>
 
-							<DatePicker
+							<Input
 								label="Purchase Date"
-								field={purchaseFields.purchase_date}
+								errors={purchaseFields.purchase_date.errors}
+								name="purchase_date"
+								defaultValue={
+									purchaseFields.purchase_date.defaultValue
+								}
+								type="date"
 							/>
 							<Input
 								label="Amount"
-								field={purchaseFields.amount}
+								errors={purchaseFields.amount.errors}
+								name="amount"
+								defaultValue={
+									purchaseFields.amount.defaultValue
+								}
+								type="text"
 							/>
 							<CurrencyInput
 								label="Cost"
@@ -273,7 +285,12 @@ export default function AddStockUsage() {
 							/>
 							<Input
 								label="Details"
-								field={purchaseFields.details}
+								errors={purchaseFields.details.errors}
+								name="details"
+								defaultValue={
+									purchaseFields.details.defaultValue
+								}
+								type="number"
 							/>
 						</DrawerBody>
 						<DrawerFooter>
@@ -306,7 +323,12 @@ export default function AddStockUsage() {
 					>
 						<Input
 							label="Name"
-							field={createStockLineFields.stockLineName}
+							errors={createStockLineFields.stockLineName.errors}
+							name="stockLineName"
+							defaultValue={
+								createStockLineFields.stockLineName.defaultValue
+							}
+							type="text"
 						/>
 						<Select
 							label="Stock Group"
