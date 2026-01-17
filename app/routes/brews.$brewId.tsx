@@ -26,9 +26,9 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	}
 
 	return Promise.all([
-		getBrewById(supabaseClient, userId, brewId),
-		getStockUsageSummary(supabaseClient, userId, brewId),
-		getProductSummaryForBrew(supabaseClient, userId, brewId),
+		getBrewById(supabaseClient, brewId),
+		getStockUsageSummary(supabaseClient, brewId),
+		getProductSummaryForBrew(supabaseClient, brewId),
 	]);
 };
 

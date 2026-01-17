@@ -12,10 +12,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	const remainingPurchasesResponse = await getRemainingPurchases(
-		supabaseClient,
-		userId
-	);
+	const remainingPurchasesResponse =
+		await getRemainingPurchases(supabaseClient);
 
 	if (!remainingPurchasesResponse || remainingPurchasesResponse.error) {
 		throw new Response('Error getting remaining purchases', {

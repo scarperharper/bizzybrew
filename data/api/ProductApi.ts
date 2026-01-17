@@ -1,18 +1,17 @@
-import { SupabaseClient } from "@supabase/supabase-js";
-import { ApiResult } from "./ApiResult";
-import { Product, ProductSummary } from "../models/Product";
-import { ProductType } from "../models/ProductType";
+import { SupabaseClient } from '@supabase/supabase-js';
+import type { ApiResult } from './ApiResult';
+import { Product, ProductSummary } from '../models/Product';
+import { ProductType } from '../models/ProductType';
 
 export async function getProductSummaryForBrew(
-  supabaseClient: SupabaseClient,
-  userId: string,
-  brewId: number,
-  limit: number = 100
+	supabaseClient: SupabaseClient,
+	brewId: number,
+	limit: number = 100,
 ): Promise<ApiResult<ProductSummary[]>> {
-  const result = await supabaseClient
-    .from("product")
-    .select(
-      `
+	const result = await supabaseClient
+		.from('product')
+		.select(
+			`
       id,
       brew ( id, name ),
       product_type ( id, name ),
@@ -29,171 +28,166 @@ export async function getProductSummaryForBrew(
         quantity,
         created_at
       )
-    `
-    )
-    .eq("brew_id", brewId)
-    .limit(limit);
+    `,
+		)
+		.eq('brew_id', brewId)
+		.limit(limit);
 
-  if (result.data) {
-    return {
-      success: true,
-      data: result.data as unknown as ProductSummary[],
-    };
-  }
-  return {
-    success: false,
-    error: result.error,
-  };
+	if (result.data) {
+		return {
+			success: true,
+			data: result.data as unknown as ProductSummary[],
+		};
+	}
+	return {
+		success: false,
+		error: result.error,
+	};
 }
 
 export async function insertOneProduct(
-  supabaseClient: SupabaseClient,
-  userId: string,
-  product: Partial<Product>
+	supabaseClient: SupabaseClient,
+	userId: string,
+	product: Partial<Product>,
 ): Promise<ApiResult<Product>> {
-  delete product.id;
+	delete product.id;
 
-  const result = await supabaseClient
-    .from("product")
-    .insert({ ...product, user_id: userId })
-    .select();
+	const result = await supabaseClient
+		.from('product')
+		.insert({ ...product, user_id: userId })
+		.select();
 
-  if (result.data) {
-    return {
-      success: true,
-      data: result.data.pop(),
-    };
-  }
-  return {
-    success: false,
-    error: result.error,
-  };
+	if (result.data) {
+		return {
+			success: true,
+			data: result.data.pop(),
+		};
+	}
+	return {
+		success: false,
+		error: result.error,
+	};
 }
 
 export async function updateOneProduct(
-  supabaseClient: SupabaseClient,
-  userId: string,
-  product: Partial<Product>
+	supabaseClient: SupabaseClient,
+	product: Partial<Product>,
 ): Promise<ApiResult<Product>> {
-  const result = await supabaseClient
-    .from("product")
-    .update(product)
-    .eq("id", product.id)
-    .select();
+	const result = await supabaseClient
+		.from('product')
+		.update(product)
+		.eq('id', product.id)
+		.select();
 
-  if (result.data) {
-    return {
-      success: true,
-      data: result.data.pop(),
-    };
-  }
-  return {
-    success: false,
-    error: result.error,
-  };
+	if (result.data) {
+		return {
+			success: true,
+			data: result.data.pop(),
+		};
+	}
+	return {
+		success: false,
+		error: result.error,
+	};
 }
 
 export async function getProductById(
-  supabaseClient: SupabaseClient,
-  userId: string,
-  productId: number
+	supabaseClient: SupabaseClient,
+	productId: number,
 ): Promise<ApiResult<Product>> {
-  const result = await supabaseClient
-    .from("product")
-    .select()
-    .eq("id", productId);
+	const result = await supabaseClient
+		.from('product')
+		.select()
+		.eq('id', productId);
 
-  if (result.status == 200)
-    return {
-      success: true,
-      data: result.data?.pop() as Product,
-    };
+	if (result.status == 200)
+		return {
+			success: true,
+			data: result.data?.pop() as Product,
+		};
 
-  return {
-    success: false,
-    error: result.error,
-  };
+	return {
+		success: false,
+		error: result.error,
+	};
 }
 
 export async function deleteOneProduct(
-  supabaseClient: SupabaseClient,
-  userId: string,
-  product: Product
+	supabaseClient: SupabaseClient,
+	userId: string,
+	product: Product,
 ): Promise<ApiResult<Product>> {
-  return deleteOneProductById(supabaseClient, userId, product.id);
+	return deleteOneProductById(supabaseClient, product.id);
 }
 
 export async function deleteOneProductById(
-  supabaseClient: SupabaseClient,
-  userId: string,
-  productId: number
+	supabaseClient: SupabaseClient,
+	productId: number,
 ): Promise<ApiResult<Product>> {
-  const result = await supabaseClient
-    .from("product")
-    .delete()
-    .eq("id", productId)
-    .select();
+	const result = await supabaseClient
+		.from('product')
+		.delete()
+		.eq('id', productId)
+		.select();
 
-  if (result.status == 200)
-    return {
-      success: true,
-      data: {} as Product,
-    };
+	if (result.status == 200)
+		return {
+			success: true,
+			data: {} as Product,
+		};
 
-  return {
-    success: false,
-    error: result.error,
-  };
+	return {
+		success: false,
+		error: result.error,
+	};
 }
 
 export async function getProductTypes(
-  supabaseClient: SupabaseClient,
-  userId: string
+	supabaseClient: SupabaseClient,
 ): Promise<ApiResult<ProductType[]>> {
-  const result = await supabaseClient
-    .from("product_type")
-    .select()
-    .order("name");
+	const result = await supabaseClient
+		.from('product_type')
+		.select()
+		.order('name');
 
-  if (result.data) {
-    return {
-      success: true,
-      data: result.data as unknown as ProductType[],
-    };
-  }
-  return {
-    success: false,
-    error: result.error,
-  };
+	if (result.data) {
+		return {
+			success: true,
+			data: result.data as unknown as ProductType[],
+		};
+	}
+	return {
+		success: false,
+		error: result.error,
+	};
 }
 
 export async function getAvailableProducts(
-  supabaseClient: SupabaseClient,
-  userId: string
+	supabaseClient: SupabaseClient,
 ): Promise<ApiResult<ProductSummary[]>> {
-  const result = await supabaseClient
-    .from("product")
-    .select(
-      `
+	const result = await supabaseClient
+		.from('product')
+		.select(
+			`
       id,
       amount,
       remaining,
       list_price,
       brew (id, name),
       product_type (id, name)
-    `
-    )
-    .gt("remaining", 0)
-    .order("brew(name)");
+    `,
+		)
+		.gt('remaining', 0)
+		.order('brew(name)');
 
-  if (result.data) {
-    return {
-      success: true,
-      data: result.data as unknown as ProductSummary[],
-    };
-  }
-  return {
-    success: false,
-    error: result.error,
-  };
+	if (result.data) {
+		return {
+			success: true,
+			data: result.data as unknown as ProductSummary[],
+		};
+	}
+	return {
+		success: false,
+		error: result.error,
+	};
 }

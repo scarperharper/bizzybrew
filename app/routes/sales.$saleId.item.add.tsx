@@ -52,8 +52,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	}
 
 	const [saleResult, productsResult] = await Promise.all([
-		getSaleSummaryById(supabaseClient, userId, saleId),
-		getAvailableProducts(supabaseClient, userId),
+		getSaleSummaryById(supabaseClient, saleId),
+		getAvailableProducts(supabaseClient),
 	]);
 	if (!saleResult.success || !productsResult.success) {
 		throw new Response(`Error getting data`, { status: 500 });
@@ -136,10 +136,13 @@ export default function AddSaleItem() {
 					</DrawerHeader>
 
 					<DrawerBody>
-						<InputHidden name="sale_id" field={fields.sale_id} />
+						<InputHidden
+							name="sale_id"
+							defaultValue={fields.sale_id.defaultValue}
+						/>
 						<InputHidden
 							name="created_at"
-							field={fields.created_at}
+							defaultValue={fields.created_at.defaultValue}
 						/>
 						<Combobox
 							label="Product"
@@ -149,7 +152,9 @@ export default function AddSaleItem() {
 						/>
 						<CurrencyInput
 							label="Price"
-							field={fields.unit_price}
+							name="unit_price"
+							defaultValue={fields.unit_price.defaultValue}
+							errors={fields.unit_price.errors}
 						/>
 						<Input
 							label="Quantity"

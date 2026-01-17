@@ -8,9 +8,8 @@ import type { ApiResult } from './ApiResult';
 
 export async function getStockUsageSummary(
 	supabaseClient: SupabaseClient,
-	userId: string,
 	brewId: number,
-	id?: number
+	id?: number,
 ): Promise<StockUsageSummary[] | StockUsageSummary> {
 	if (id) {
 		const result = await supabaseClient
@@ -32,8 +31,7 @@ export async function getStockUsageSummary(
 
 export async function getStockUsageById(
 	supabaseClient: SupabaseClient,
-	userId: string,
-	id: number
+	id: number,
 ): Promise<ApiResult<StockUsage>> {
 	const result = await supabaseClient
 		.from('stock_usage')
@@ -55,7 +53,7 @@ export async function getStockUsageById(
 export async function insertOneStockUsage(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	stockUsage: Partial<StockUsage>
+	stockUsage: Partial<StockUsage>,
 ): Promise<ApiResult<StockUsage>> {
 	const result = await supabaseClient
 		.from('stock_usage')
@@ -77,7 +75,7 @@ export async function insertOneStockUsage(
 export async function addStockUsage(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	stockUsageRequest: StockUsageRequest
+	stockUsageRequest: StockUsageRequest,
 ): Promise<ApiResult<StockUsageRequest>> {
 	const result = await supabaseClient.rpc('add_usage', {
 		_amount: stockUsageRequest.amount,
@@ -101,8 +99,7 @@ export async function addStockUsage(
 
 export async function deleteStockUsage(
 	supabaseClient: SupabaseClient,
-	userId: string,
-	stockUsage: Partial<StockUsageSummary>
+	stockUsage: Partial<StockUsageSummary>,
 ): Promise<ApiResult<Partial<StockUsageSummary>>> {
 	const result = await supabaseClient.rpc('remove_usage', {
 		_brew_id: stockUsage.brew_id,

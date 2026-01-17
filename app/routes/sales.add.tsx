@@ -18,7 +18,11 @@ import {
 } from 'react-router';
 import { z } from 'zod';
 import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
-import { useForm, getFormProps } from '@conform-to/react';
+import {
+	useForm,
+	getFormProps,
+	type SubmissionResult,
+} from '@conform-to/react';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { Combobox } from '@/components/local/combobox';
 import { getCustomers, insertOneCustomer } from '@/data/api/CustomerApi';
@@ -27,6 +31,7 @@ import { insertOneSale } from '@/data/api/SaleApi';
 import { Sale } from '@/data/models/Sale';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
 import { Input } from '@/components/form-elements/input';
+import { format } from 'date-fns';
 
 const saleSchema = z.object({
 	created_at: z.coerce.date(),
@@ -44,9 +49,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	const [customersResult] = await Promise.all([
-		getCustomers(supabaseClient, userId),
-	]);
+	const [customersResult] = await Promise.all([getCustomers(supabaseClient)]);
 	if (!customersResult.success) {
 		throw new Response(`Error getting data`, { status: 500 });
 	}
@@ -70,11 +73,10 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		if (submission.status !== 'success') {
 			return submission.reply();
 		}
-		const created = await insertOneCustomer(supabaseClient, userId, {
+		return await insertOneCustomer(supabaseClient, userId, {
 			created_at: new Date(),
 			name: submission.value.name,
 		});
-		return created;
 	} else if (intent == 'addSale') {
 		const submission = parseWithZod(formData, { schema: saleSchema });
 		if (submission.status !== 'success') {
@@ -91,7 +93,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
 export default function AddSale() {
 	const { customersResult } = useLoaderData<typeof loader>();
-	const lastResult = useActionData<typeof action>();
+	const lastResult = useActionData<SubmissionResult<string[]>>();
 	const customers = customersResult.data as unknown as Customer[];
 
 	const [form, fields] = useForm({
@@ -100,7 +102,7 @@ export default function AddSale() {
 		shouldValidate: 'onBlur',
 		shouldRevalidate: 'onInput',
 		defaultValue: {
-			created_at: new Date().toISOString(),
+			created_at: format(new Date(), 'yyyy-MM-dd'),
 			customer_id: '',
 		},
 		onValidate({ formData }) {

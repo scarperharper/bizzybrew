@@ -12,7 +12,7 @@ import {
 export async function getStockPurchaseById(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	id: number
+	id: number,
 ): Promise<StockPurchase> {
 	const result = await supabaseClient
 		.from('stock_purchase')
@@ -24,8 +24,7 @@ export async function getStockPurchaseById(
 
 export async function getPurchasesForReceiptId(
 	supabaseClient: SupabaseClient,
-	userId: string,
-	receiptId: number
+	receiptId: number,
 ): Promise<ApiResult<StockPurchaseSummary[]>> {
 	// TODO: fix schema so that stock_line and stock_group are objects, not arrays
 	// https://postgrest.org/en/v12/references/api/resource_embedding.html#nested-embedding
@@ -45,7 +44,7 @@ export async function getPurchasesForReceiptId(
         user_id,
         stock_line ( id, name, stock_group ( group_name ) ),
         stock_usage ( usage_date, amount, usage_cost, brew (id, name) )
-        `
+        `,
 		)
 		.eq('receipt_id', receiptId)) as unknown as PostgrestSingleResponse<
 		StockPurchaseSummary[]
@@ -65,7 +64,6 @@ export async function getPurchasesForReceiptId(
 
 export async function getRemainingPurchases(
 	supabaseClient: SupabaseClient,
-	userId: string
 ): Promise<ApiResult<RemainingPurchase[]>> {
 	const result = await supabaseClient
 		.from('view_remaining_purchases')
@@ -86,7 +84,7 @@ export async function getRemainingPurchases(
 export async function insertOneStockPurchase(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	stockPurchase: Partial<StockPurchase>
+	stockPurchase: Partial<StockPurchase>,
 ): Promise<ApiResult<StockPurchase>> {
 	const data: Partial<StockPurchase> = {
 		stock_line_id: stockPurchase.stock_line_id,
@@ -119,7 +117,7 @@ export async function insertOneStockPurchase(
 export async function updateOneStockPurchase(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	stockPurchase: StockPurchase
+	stockPurchase: StockPurchase,
 ): Promise<ApiResult<StockPurchase>> {
 	const data: Partial<StockPurchase> = {
 		stock_line_id: stockPurchase.stock_line_id,
@@ -153,19 +151,19 @@ export async function updateOneStockPurchase(
 export async function deleteOneStockPurchase(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	stockPurchase: StockPurchase
+	stockPurchase: StockPurchase,
 ): Promise<ApiResult<StockPurchase>> {
 	return await deleteOneStockPurchaseById(
 		supabaseClient,
 		userId,
-		stockPurchase.id!
+		stockPurchase.id!,
 	);
 }
 
 export async function deleteOneStockPurchaseById(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	id: number
+	id: number,
 ): Promise<ApiResult<StockPurchase>> {
 	const result = await supabaseClient
 		.from('stock_purchase')

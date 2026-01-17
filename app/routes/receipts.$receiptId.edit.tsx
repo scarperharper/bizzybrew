@@ -47,7 +47,6 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 
 	const receiptResponse = await getReceiptById(
 		supabaseClient,
-		userId,
 		parseInt(params.receiptId),
 	);
 	if (!receiptResponse.success) {
@@ -74,7 +73,6 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	if (submission.value.id) {
 		const updated = await updateOneReceipt(
 			supabaseClient,
-			userId,
 			submission.value,
 		);
 		return redirect(`/receipts/${(updated.data as Receipt).id}`);

@@ -22,6 +22,7 @@ import {
 	useForm,
 	getFormProps,
 	type SubmissionResult,
+	getSelectProps,
 } from '@conform-to/react';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
@@ -81,9 +82,9 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 
 	const [receiptResponse, stockLineSummaryResponse, stockGroupsResponse] =
 		await Promise.all([
-			getReceiptById(supabaseClient, userId, parseInt(params.receiptId)),
-			getStockLineSummary(supabaseClient, userId),
-			getStockGroups(supabaseClient, userId),
+			getReceiptById(supabaseClient, parseInt(params.receiptId)),
+			getStockLineSummary(supabaseClient),
+			getStockGroups(supabaseClient),
 		]);
 
 	if (!receiptResponse.success || !stockLineSummaryResponse.success) {
@@ -247,7 +248,9 @@ export default function AddStockUsage() {
 						<DrawerBody>
 							<InputHidden
 								name="receipt_id"
-								field={purchaseFields.receipt_id}
+								defaultValue={
+									purchaseFields.receipt_id.defaultValue
+								}
 							/>
 							<Combobox
 								options={stockLineOptions}
@@ -281,7 +284,9 @@ export default function AddStockUsage() {
 							/>
 							<CurrencyInput
 								label="Cost"
-								field={purchaseFields.cost}
+								name="cost"
+								defaultValue={purchaseFields.cost.defaultValue}
+								errors={purchaseFields.cost.errors}
 							/>
 							<Input
 								label="Details"
@@ -331,9 +336,15 @@ export default function AddStockUsage() {
 							type="text"
 						/>
 						<Select
+							name="stockLineGroupId"
 							label="Stock Group"
 							options={stockGroupOptions}
-							field={createStockLineFields.stockLineGroupId}
+							errors={
+								createStockLineFields.stockLineGroupId.errors
+							}
+							selectProps={getSelectProps(
+								createStockLineFields.stockLineGroupId,
+							)}
 						/>
 						<DialogFooter>
 							<SubmitButton

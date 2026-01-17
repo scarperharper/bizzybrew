@@ -27,7 +27,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	return await getReceiptSummary(supabaseClient, userId);
+	return await getReceiptSummary(supabaseClient);
 };
 
 const Receipts = () => {
@@ -60,8 +60,8 @@ const Receipts = () => {
 										isActive
 											? 'border-secondary'
 											: isPending
-											? 'border-grey'
-											: 'border-transparent'
+												? 'border-grey'
+												: 'border-transparent'
 									}`
 								}
 								to={`/receipts/${receipt.id}`}

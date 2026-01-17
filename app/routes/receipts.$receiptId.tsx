@@ -30,8 +30,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 
 	// Pass the authenticated client to API functions
 	const [receiptResult, purchasesForReceiptIdResult] = await Promise.all([
-		getReceiptById(supabaseClient, userId, receiptId),
-		getPurchasesForReceiptId(supabaseClient, userId, receiptId),
+		getReceiptById(supabaseClient, receiptId),
+		getPurchasesForReceiptId(supabaseClient, receiptId),
 	]);
 
 	return { receiptResult, purchasesForReceiptIdResult };
@@ -75,7 +75,7 @@ export default function ReceiptDetail() {
 							method="post"
 							onSubmit={(event) => {
 								const response = confirm(
-									'Please confirm you want to delete this record.'
+									'Please confirm you want to delete this record.',
 								);
 								if (!response) {
 									event.preventDefault();

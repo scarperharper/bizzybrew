@@ -41,9 +41,9 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		salesSummaryResponse,
 	] = await Promise.all([
 		getRecentBrews(supabaseClient, userId, 5),
-		getReceiptSummary(supabaseClient, userId, 5),
-		getAvailableProducts(supabaseClient, userId),
-		getSalesSummary(supabaseClient, userId),
+		getReceiptSummary(supabaseClient, 5),
+		getAvailableProducts(supabaseClient),
+		getSalesSummary(supabaseClient),
 	]);
 
 	for (const response of [

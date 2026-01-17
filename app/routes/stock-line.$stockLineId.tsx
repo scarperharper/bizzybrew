@@ -26,8 +26,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 
 	const [stockLineSummaryResult, stockLineTransactionsResult] =
 		await Promise.all([
-			getStockLineSummary(supabaseClient, userId, stockLineId),
-			getStockLineTransactions(supabaseClient, userId, stockLineId),
+			getStockLineSummary(supabaseClient, stockLineId),
+			getStockLineTransactions(supabaseClient, stockLineId),
 		]);
 
 	return { stockLineSummaryResult, stockLineTransactionsResult };

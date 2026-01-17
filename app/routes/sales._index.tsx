@@ -12,7 +12,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	const salesSummaryResponse = await getSalesSummary(supabaseClient, userId);
+	const salesSummaryResponse = await getSalesSummary(supabaseClient);
 	if (!salesSummaryResponse || salesSummaryResponse.error) {
 		throw new Response('Not Found', { status: 404 });
 	}

@@ -3,7 +3,7 @@ import type { ApiResult } from './ApiResult';
 import { SupabaseClient } from '@supabase/supabase-js';
 
 export async function getBrews(
-	supabaseClient: SupabaseClient
+	supabaseClient: SupabaseClient,
 ): Promise<ApiResult<Brew[]>> {
 	const result = await supabaseClient
 		.from('brew')
@@ -24,8 +24,7 @@ export async function getBrews(
 
 export async function getBrewById(
 	supabaseClient: SupabaseClient,
-	userId: string,
-	id: number
+	id: number,
 ): Promise<ApiResult<Brew>> {
 	const result = await supabaseClient
 		.from('brew')
@@ -50,7 +49,8 @@ export async function getBrewById(
 
 export async function insertOneBrew(
 	supabaseClient: SupabaseClient,
-	brew: Partial<Brew>
+	userId: string,
+	brew: Partial<Brew>,
 ): Promise<ApiResult<Brew>> {
 	const result = await supabaseClient
 		.from('brew')
@@ -76,7 +76,7 @@ export async function insertOneBrew(
 
 export async function updateOneBrew(
 	supabaseClient: SupabaseClient,
-	brew: Partial<Brew>
+	brew: Partial<Brew>,
 ): Promise<ApiResult<Brew>> {
 	const result = await supabaseClient
 		.from('brew')
@@ -99,7 +99,7 @@ export async function updateOneBrew(
 export async function getRecentBrews(
 	supabaseClient: SupabaseClient,
 	userId: string,
-	count: number = 10
+	count: number = 10,
 ): Promise<ApiResult<RecentBrew[]>> {
 	const result = await supabaseClient
 		.from('brew')
@@ -112,7 +112,7 @@ export async function getRecentBrews(
       duty,
       user_id,
       view_recent_usage_summary ( group_name, sum_cost, sum_amount )
-      `
+      `,
 		)
 		.order('brew_date', { ascending: false })
 		.limit(count);

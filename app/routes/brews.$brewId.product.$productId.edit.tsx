@@ -54,8 +54,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	}
 
 	const [productResult, productTypesResult] = await Promise.all([
-		getProductById(supabaseClient, userId, parseInt(params.productId)),
-		getProductTypes(supabaseClient, userId),
+		getProductById(supabaseClient, parseInt(params.productId)),
+		getProductTypes(supabaseClient),
 	]);
 
 	if (!productResult.success || !productTypesResult.success) {
@@ -64,7 +64,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 				productResult,
 				productTypesResult,
 			})}`,
-			{ status: 500 }
+			{ status: 500 },
 		);
 	}
 	return {
@@ -93,7 +93,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		const inserted = await insertOneProduct(
 			supabaseClient,
 			userId,
-			submission.value
+			submission.value,
 		);
 		if (!inserted.success) {
 			throw new Error(`Error inserting data ${inserted.error?.message}`);
@@ -101,8 +101,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	} else {
 		const updated = await updateOneProduct(
 			supabaseClient,
-			userId,
-			submission.value
+			submission.value,
 		);
 		if (!updated.success) {
 			throw new Error(`Error updating data ${updated.error?.message}`);
@@ -165,8 +164,14 @@ export default function EditProduct() {
 					</DrawerHeader>
 
 					<DrawerBody>
-						<InputHidden name="id" field={fields.id} />
-						<InputHidden name="brew_id" field={fields.brew_id} />
+						<InputHidden
+							name="id"
+							defaultValue={fields.id.defaultValue}
+						/>
+						<InputHidden
+							name="brew_id"
+							defaultValue={fields.brew_id.defaultValue}
+						/>
 						<Combobox
 							label="Product Type"
 							options={productTypesOptions}
@@ -174,11 +179,27 @@ export default function EditProduct() {
 							value={product?.product_type_id?.toString()}
 							field={fields.product_type_id}
 						/>
-						<Input label="Amount" field={fields.amount} />
-						<Input label="Remaining" field={fields.remaining} />
+						<Input
+							label="Amount"
+							key="amount"
+							defaultValue={fields.amount.defaultValue}
+							errors={fields.amount.errors}
+							name="amount"
+							type="number"
+						/>
+						<Input
+							label="Remaining"
+							key="amount"
+							defaultValue={fields.remaining.defaultValue}
+							errors={fields.remaining.errors}
+							name="remaining"
+							type="number"
+						/>
 						<CurrencyInput
 							label="List Price"
-							field={fields.list_price}
+							name="list_price"
+							defaultValue={fields.list_price.defaultValue}
+							errors={fields.list_price.errors}
 						/>
 					</DrawerBody>
 					<DrawerFooter>

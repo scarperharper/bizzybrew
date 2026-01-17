@@ -49,8 +49,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	}
 
 	const [brewResult, stockPurchaseSummaryResult] = await Promise.all([
-		getBrewById(supabaseClient, userId, parseInt(params.brewId)),
-		getRemainingPurchases(supabaseClient, userId),
+		getBrewById(supabaseClient, parseInt(params.brewId)),
+		getRemainingPurchases(supabaseClient),
 	]);
 
 	if (!brewResult.success || !stockPurchaseSummaryResult.success) {
@@ -139,7 +139,10 @@ export default function AddStockUsage() {
 					</DrawerHeader>
 
 					<DrawerBody>
-						<InputHidden name="brew_id" field={fields.brew_id} />
+						<InputHidden
+							name="brew_id"
+							defaultValue={fields.brew_id.defaultValue}
+						/>
 						<Combobox
 							label="Ingredient"
 							options={stockPurchaseOptions}

@@ -22,7 +22,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	}
 
 	const [saleSummaryResponse] = await Promise.all([
-		getSaleSummaryById(supabaseClient, userId, saleId),
+		getSaleSummaryById(supabaseClient, saleId),
 	]);
 
 	if (!saleSummaryResponse || saleSummaryResponse.error) {
@@ -42,7 +42,7 @@ const SalesIndex = () => {
 			{
 				action: `/sales/${saleSummary.id}/saleItem/${item.id}/destroy`,
 				method: 'post',
-			}
+			},
 		);
 	};
 

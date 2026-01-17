@@ -12,10 +12,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	const receiptSummaryResponse = await getReceiptSummary(
-		supabaseClient,
-		userId
-	);
+	const receiptSummaryResponse = await getReceiptSummary(supabaseClient);
 	if (!receiptSummaryResponse || receiptSummaryResponse.error) {
 		throw new Response('Not Found', { status: 404 });
 	}

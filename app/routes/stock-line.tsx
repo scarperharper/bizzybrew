@@ -30,7 +30,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	return await getStockLineSummary(supabaseClient, userId);
+	return await getStockLineSummary(supabaseClient);
 };
 
 const StockPage = () => {
@@ -63,8 +63,8 @@ const StockPage = () => {
 										isActive
 											? 'border-secondary'
 											: isPending
-											? 'border-grey'
-											: 'border-transparent'
+												? 'border-grey'
+												: 'border-transparent'
 									}`
 								}
 								to={`/stock-line/${stockLineSummary.id}`}

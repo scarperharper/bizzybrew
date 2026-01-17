@@ -43,11 +43,7 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 		return redirect('/sign-in');
 	}
 
-	const brew = await getBrewById(
-		supabaseClient,
-		userId,
-		parseInt(params.brewId),
-	);
+	const brew = await getBrewById(supabaseClient, parseInt(params.brewId));
 	if (!brew) {
 		throw new Response('Not Found', { status: 404 });
 	}
@@ -87,7 +83,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			duty,
 		};
 
-		const inserted = await insertOneBrew(supabaseClient, insert);
+		const inserted = await insertOneBrew(supabaseClient, userId, insert);
 		return redirect(`/brews/${(inserted.data as Brew).id}`);
 	}
 };
@@ -138,7 +134,10 @@ export default function Editbrew() {
 					</DrawerHeader>
 
 					<DrawerBody>
-						<InputHidden name="id" field={fields.id} />
+						<InputHidden
+							name="id"
+							defaultValue={fields.id.defaultValue}
+						/>
 						<Input
 							label="Brew Name"
 							defaultValue={fields.name.defaultValue}
@@ -155,7 +154,9 @@ export default function Editbrew() {
 						/>
 						<CurrencyInput
 							label="Duty Amount"
-							field={fields.duty}
+							name="duty"
+							defaultValue={fields.duty.defaultValue}
+							errors={fields.duty.errors}
 						/>
 					</DrawerBody>
 					<DrawerFooter>
