@@ -19,18 +19,19 @@ import { z } from 'zod';
 import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
 import { SubmitButton } from '@/components/form-elements/submit';
-import { Combobox, ComboboxOption } from '@/components/local/combobox';
+import { Combobox } from '@/components/local/combobox';
 import { getSaleSummaryById } from '@/data/api/SaleApi';
 import { Sale } from '@/data/models/Sale';
 import { getAvailableProducts } from '@/data/api/ProductApi';
 import invariant from 'tiny-invariant';
-import { Product, ProductSummary } from '@/data/models/Product';
+import { ProductSummary } from '@/data/models/Product';
 import { InputHidden } from '@/components/form-elements/input-hidden';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { SaleItem } from '@/data/models/SaleItem';
 import { insertOneSaleItem } from '@/data/api/SaleItemApi';
 import { Input } from '@/components/form-elements/input';
 import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { format } from 'date-fns';
 
 const schema = z.object({
 	created_at: z.coerce.date(),
@@ -98,7 +99,7 @@ export default function AddSaleItem() {
 		shouldRevalidate: 'onInput',
 		defaultValue: {
 			sale_id: sale.id.toString(),
-			created_at: sale.created_at.toString(),
+			created_at: format(new Date(sale.created_at), 'yyyy-MM-dd'),
 			unit_price: '0',
 			quantity: '1',
 			product_id: '',
@@ -145,20 +146,19 @@ export default function AddSaleItem() {
 							options={productOptions}
 							guidance={''}
 							field={fields.product_id}
-							onSelectOption={(option: ComboboxOption) => {
-								form.update({
-									name: fields.unit_price.name,
-									value: (
-										option.entity as Product
-									).list_price.toString(),
-								});
-							}}
 						/>
 						<CurrencyInput
 							label="Price"
 							field={fields.unit_price}
 						/>
-						<Input label="Quantity" field={fields.quantity} />
+						<Input
+							label="Quantity"
+							key="quantity"
+							defaultValue={fields.quantity.defaultValue}
+							errors={fields.quantity.errors}
+							name="quantity"
+							type="number"
+						/>
 					</DrawerBody>
 					<DrawerFooter>
 						<SubmitButton

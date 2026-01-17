@@ -138,7 +138,7 @@ export default function AddSale() {
 					<DrawerBody>
 						<Input
 							label="Sale Date"
-							key="created_date"
+							name="created_at"
 							defaultValue={fields.created_at.defaultValue}
 							errors={fields.created_at.errors}
 							type="date"
