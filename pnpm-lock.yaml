@@ -184,8 +184,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(react@19.2.3)
       remix-utils:
-        specifier: ^7.7.0
-        version: 7.7.0(react@19.2.3)(zod@4.3.5)
+        specifier: ^9.0.0
+        version: 9.0.0(@standard-schema/spec@1.1.0)(react-router@7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
       sonner:
         specifier: ^1.7.4
         version: 1.7.4(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -4169,29 +4169,32 @@ packages:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
 
-  remix-utils@7.7.0:
-    resolution: {integrity: sha512-J8NhP044nrNIam/xOT1L9a4RQ9FSaA2wyrUwmN8ZT+c/+CdAAf70yfaLnvMyKcV5U+8BcURQ/aVbth77sT6jGA==}
-    engines: {node: '>=18.0.0'}
+  remix-utils@9.0.0:
+    resolution: {integrity: sha512-xpDnw6hIjYbHR9/noE4lKNPRzfxvGai3XBQcjOjcwIwZVW9O1bdsnYAl+aqJ2fMXSQTNMjNuR8Cetn76HqwXCg==}
+    engines: {node: '>=20.0.0'}
     peerDependencies:
-      '@remix-run/cloudflare': ^2.0.0
-      '@remix-run/node': ^2.0.0
-      '@remix-run/react': ^2.0.0
-      '@remix-run/router': ^1.7.2
-      crypto-js: ^4.1.1
+      '@edgefirst-dev/batcher': ^1.0.0
+      '@edgefirst-dev/jwt': ^1.2.0
+      '@edgefirst-dev/server-timing': ^0.0.1
+      '@oslojs/crypto': ^1.0.1
+      '@oslojs/encoding': ^1.1.0
+      '@standard-schema/spec': ^1.0.0
       intl-parse-accept-language: ^1.0.0
       is-ip: ^5.0.1
-      react: ^18.0.0
-      zod: ^3.22.4
+      react: ^18.0.0 || ^19.0.0
+      react-router: ^7.0.0
     peerDependenciesMeta:
-      '@remix-run/cloudflare':
+      '@edgefirst-dev/batcher':
         optional: true
-      '@remix-run/node':
+      '@edgefirst-dev/jwt':
         optional: true
-      '@remix-run/react':
+      '@edgefirst-dev/server-timing':
         optional: true
-      '@remix-run/router':
+      '@oslojs/crypto':
         optional: true
-      crypto-js:
+      '@oslojs/encoding':
+        optional: true
+      '@standard-schema/spec':
         optional: true
       intl-parse-accept-language:
         optional: true
@@ -4199,7 +4202,7 @@ packages:
         optional: true
       react:
         optional: true
-      zod:
+      react-router:
         optional: true
 
   require-from-string@2.0.2:
@@ -9019,12 +9022,13 @@ snapshots:
       gopd: 1.2.0
       set-function-name: 2.0.2
 
-  remix-utils@7.7.0(react@19.2.3)(zod@4.3.5):
+  remix-utils@9.0.0(@standard-schema/spec@1.1.0)(react-router@7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3):
     dependencies:
       type-fest: 4.41.0
     optionalDependencies:
+      '@standard-schema/spec': 1.1.0
       react: 19.2.3
-      zod: 4.3.5
+      react-router: 7.12.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
 
   require-from-string@2.0.2: {}
 
