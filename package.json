@@ -10,7 +10,7 @@
 	},
 	"dependencies": {
 		"@chakra-ui/react": "^2.10.9",
-		"@conform-to/react": "^1.15.1",
+		"@conform-to/react": "^1.16.0",
 		"@conform-to/zod": "^1.15.1",
 		"@heroicons/react": "^2.2.0",
 		"@radix-ui/react-accordion": "^1.2.12",
@@ -41,7 +41,7 @@
 		"@radix-ui/react-toggle": "^1.1.10",
 		"@radix-ui/react-toggle-group": "^1.1.11",
 		"@radix-ui/react-tooltip": "^1.2.8",
-		"@react-router/fs-routes": "^7.12.0",
+		"@react-router/fs-routes": "^7.13.0",
 		"@react-router/node": "7.13.0",
 		"@react-router/serve": "7.13.0",
 		"@supabase/ssr": "^0.8.0",
