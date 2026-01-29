@@ -16,8 +16,8 @@ importers:
         specifier: ^2.10.9
         version: 2.10.9(@emotion/react@11.14.0(@types/react@19.2.9)(react@19.2.4))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@19.2.9)(react@19.2.4))(@types/react@19.2.9)(react@19.2.4))(@types/react@19.2.9)(framer-motion@12.29.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@conform-to/react':
-        specifier: ^1.15.1
-        version: 1.15.1(react@19.2.4)
+        specifier: ^1.16.0
+        version: 1.16.0(react@19.2.4)
       '@conform-to/zod':
         specifier: ^1.15.1
         version: 1.15.1(zod@4.3.5)
@@ -446,8 +446,11 @@ packages:
   '@conform-to/dom@1.15.1':
     resolution: {integrity: sha512-iqx7Ftp26zygHJq62eXK2Sibc8LVIW28bt7c1uAEsGaa7IsEzjCbNgrWblXcFHohf7vFMDisgF2kv8oS5c9Dmg==}
 
-  '@conform-to/react@1.15.1':
-    resolution: {integrity: sha512-cKH5K6MOiuIUPr9b4Z6UU5KYNv3rUmB35OEiY5F0cHvac8uCGFIh7Qjvm2bUrSloh+asAvpK5cZjxTsgYI93yg==}
+  '@conform-to/dom@1.16.0':
+    resolution: {integrity: sha512-KkURoALYztq5kli8/Ojqe4PyTcAmc9pHOmIoU5RJzre8poWgmjCsHQt28xhEyDk5XBwo8bkvyKm8oKqwSAAucw==}
+
+  '@conform-to/react@1.16.0':
+    resolution: {integrity: sha512-xDPwDCijAMTcQcDD2fgGh76KIOsx8xEbPGdFTbal7RJyHPA4FYL0v4mBp4jPN5ejKkCOF9mVeb1UbZZ3GiZ/AA==}
     peerDependencies:
       react: '>=18'
 
@@ -4906,9 +4909,11 @@ snapshots:
 
   '@conform-to/dom@1.15.1': {}
 
-  '@conform-to/react@1.15.1(react@19.2.4)':
+  '@conform-to/dom@1.16.0': {}
+
+  '@conform-to/react@1.16.0(react@19.2.4)':
     dependencies:
-      '@conform-to/dom': 1.15.1
+      '@conform-to/dom': 1.16.0
       react: 19.2.4
 
   '@conform-to/zod@1.15.1(zod@4.3.5)':
