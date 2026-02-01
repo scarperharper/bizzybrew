@@ -26,6 +26,7 @@ import {
 	useNavigate,
 	useActionData,
 } from 'react-router';
+import { format } from 'date-fns';
 
 const schema = z.object({
 	id: z.coerce.number().optional(),
@@ -101,7 +102,7 @@ export default function Editbrew() {
 		defaultValue: {
 			id: brewData.id?.toString() || '',
 			name: brewData.name || '',
-			brew_date: brewData.brew_date?.toString() || '',
+			brew_date: format(brewData.brew_date, 'yyyy-MM-dd'),
 			duty: brewData.duty?.toString() || '0',
 		},
 		onValidate({ formData }) {
