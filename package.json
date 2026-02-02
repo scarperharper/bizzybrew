@@ -48,7 +48,7 @@
 		"@supabase/supabase-js": "latest",
 		"@tanstack/react-table": "^8.21.3",
 		"@tremor/react": "^3.18.7",
-		"autoprefixer": "10.4.23",
+		"autoprefixer": "10.4.24",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk": "^1.1.1",
@@ -76,16 +76,16 @@
 		"tslib": "^2.8.1",
 		"uuid": "^13.0.0",
 		"vitest": "^4.0.18",
-		"zod": "^4.3.5"
+		"zod": "^4.3.6"
 	},
 	"devDependencies": {
 		"@react-router/dev": "7.10.1",
-		"@types/node": "^25.1.0",
+		"@types/node": "^25.2.0",
 		"@types/react": "^19.2.10",
 		"@types/react-dom": "^19.2.3",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
 		"@typescript-eslint/parser": "^6.21.0",
-		"autoprefixer": "^10.4.23",
+		"autoprefixer": "^10.4.24",
 		"eslint": "^8.57.1",
 		"eslint-import-resolver-typescript": "^4.4.4",
 		"eslint-plugin-import": "^2.32.0",
