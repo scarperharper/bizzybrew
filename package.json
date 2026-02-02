@@ -66,7 +66,7 @@
 		"react-number-format": "^5.4.4",
 		"react-router": "^7.13.0",
 		"react-wrap-balancer": "^1.1.1",
-		"remix-utils": "^9.0.0",
+		"remix-utils": "^9.0.1",
 		"sonner": "^2.0.7",
 		"sst": "3.17.38",
 		"tailwind-merge": "^3.4.0",
