@@ -9,7 +9,7 @@
 		"typecheck": "react-router typegen && tsc"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^3.31.0",
+		"@chakra-ui/react": "^3.32.0",
 		"@conform-to/react": "^1.16.0",
 		"@conform-to/zod": "^1.16.0",
 		"@heroicons/react": "^2.2.0",
