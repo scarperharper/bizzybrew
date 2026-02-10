@@ -19,8 +19,8 @@ importers:
         specifier: ^1.16.0
         version: 1.16.0(react@19.2.4)
       '@conform-to/zod':
-        specifier: ^1.16.0
-        version: 1.16.0(zod@4.3.6)
+        specifier: ^1.17.0
+        version: 1.17.0(zod@4.3.6)
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.4)
@@ -437,13 +437,16 @@ packages:
   '@conform-to/dom@1.16.0':
     resolution: {integrity: sha512-KkURoALYztq5kli8/Ojqe4PyTcAmc9pHOmIoU5RJzre8poWgmjCsHQt28xhEyDk5XBwo8bkvyKm8oKqwSAAucw==}
 
+  '@conform-to/dom@1.17.0':
+    resolution: {integrity: sha512-+ouTWbuQZDii0ir435hSx9stGUMPQZTebK57VB8D7AqicGOAbFtCyXT0Y4mhxY7tK6He7c8/w5k1zYKWQaH2Lw==}
+
   '@conform-to/react@1.16.0':
     resolution: {integrity: sha512-xDPwDCijAMTcQcDD2fgGh76KIOsx8xEbPGdFTbal7RJyHPA4FYL0v4mBp4jPN5ejKkCOF9mVeb1UbZZ3GiZ/AA==}
     peerDependencies:
       react: '>=18'
 
-  '@conform-to/zod@1.16.0':
-    resolution: {integrity: sha512-c976dE2Hqrl5E984NZGQOe1b1+HGfp7jdqjz/1qbpWLTcNHO1MpJo0dCt0x0E2NSOv7BNcjpEPrEholVnt/4rw==}
+  '@conform-to/zod@1.17.0':
+    resolution: {integrity: sha512-QoXiRpWl/UmtaVsINnn4M5Uc0N2RB99rWkpE1SB3P5VQO/F4fl55BNfeHjv3oloNkIJ6aTyH91gHI7j2YWBQNg==}
     peerDependencies:
       zod: ^3.21.0 || ^4.0.0
 
@@ -5131,14 +5134,16 @@ snapshots:
 
   '@conform-to/dom@1.16.0': {}
 
+  '@conform-to/dom@1.17.0': {}
+
   '@conform-to/react@1.16.0(react@19.2.4)':
     dependencies:
       '@conform-to/dom': 1.16.0
       react: 19.2.4
 
-  '@conform-to/zod@1.16.0(zod@4.3.6)':
+  '@conform-to/zod@1.17.0(zod@4.3.6)':
     dependencies:
-      '@conform-to/dom': 1.16.0
+      '@conform-to/dom': 1.17.0
       zod: 4.3.6
 
   '@date-fns/tz@1.4.1': {}
