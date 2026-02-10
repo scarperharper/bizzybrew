@@ -11,7 +11,7 @@
 	"dependencies": {
 		"@chakra-ui/react": "^3.32.0",
 		"@conform-to/react": "^1.16.0",
-		"@conform-to/zod": "^1.16.0",
+		"@conform-to/zod": "^1.17.0",
 		"@heroicons/react": "^2.2.0",
 		"@radix-ui/react-accordion": "^1.2.12",
 		"@radix-ui/react-alert-dialog": "^1.1.15",
@@ -55,7 +55,7 @@
 		"date-fns": "^4.1.0",
 		"echarts": "^6.0.0",
 		"echarts-for-react": "^3.0.6",
-		"framer-motion": "^12.33.0",
+		"framer-motion": "^12.34.0",
 		"isbot": "^5.1.34",
 		"lucide-react": "^0.563.0",
 		"next-themes": "^0.3.0",

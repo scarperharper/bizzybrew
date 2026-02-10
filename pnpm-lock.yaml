@@ -19,8 +19,8 @@ importers:
         specifier: ^1.16.0
         version: 1.16.0(react@19.2.4)
       '@conform-to/zod':
-        specifier: ^1.16.0
-        version: 1.16.0(zod@4.3.6)
+        specifier: ^1.17.0
+        version: 1.17.0(zod@4.3.6)
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.4)
@@ -151,8 +151,8 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6(echarts@6.0.0)(react@19.2.4)
       framer-motion:
-        specifier: ^12.33.0
-        version: 12.33.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^12.34.0
+        version: 12.34.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       isbot:
         specifier: ^5.1.34
         version: 5.1.34
@@ -437,13 +437,16 @@ packages:
   '@conform-to/dom@1.16.0':
     resolution: {integrity: sha512-KkURoALYztq5kli8/Ojqe4PyTcAmc9pHOmIoU5RJzre8poWgmjCsHQt28xhEyDk5XBwo8bkvyKm8oKqwSAAucw==}
 
+  '@conform-to/dom@1.17.0':
+    resolution: {integrity: sha512-+ouTWbuQZDii0ir435hSx9stGUMPQZTebK57VB8D7AqicGOAbFtCyXT0Y4mhxY7tK6He7c8/w5k1zYKWQaH2Lw==}
+
   '@conform-to/react@1.16.0':
     resolution: {integrity: sha512-xDPwDCijAMTcQcDD2fgGh76KIOsx8xEbPGdFTbal7RJyHPA4FYL0v4mBp4jPN5ejKkCOF9mVeb1UbZZ3GiZ/AA==}
     peerDependencies:
       react: '>=18'
 
-  '@conform-to/zod@1.16.0':
-    resolution: {integrity: sha512-c976dE2Hqrl5E984NZGQOe1b1+HGfp7jdqjz/1qbpWLTcNHO1MpJo0dCt0x0E2NSOv7BNcjpEPrEholVnt/4rw==}
+  '@conform-to/zod@1.17.0':
+    resolution: {integrity: sha512-QoXiRpWl/UmtaVsINnn4M5Uc0N2RB99rWkpE1SB3P5VQO/F4fl55BNfeHjv3oloNkIJ6aTyH91gHI7j2YWBQNg==}
     peerDependencies:
       zod: ^3.21.0 || ^4.0.0
 
@@ -3124,8 +3127,8 @@ packages:
   fraction.js@5.3.4:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
-  framer-motion@12.33.0:
-    resolution: {integrity: sha512-ca8d+rRPcDP5iIF+MoT3WNc0KHJMjIyFAbtVLvM9eA7joGSpeqDfiNH/kCs1t4CHi04njYvWyj0jS4QlEK/rJQ==}
+  framer-motion@12.34.0:
+    resolution: {integrity: sha512-+/H49owhzkzQyxtn7nZeF4kdH++I2FWrESQ184Zbcw5cEqNHYkE5yxWxcTLSj5lNx3NWdbIRy5FHqUvetD8FWg==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -3653,8 +3656,8 @@ packages:
     resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
     engines: {node: '>= 0.8.0'}
 
-  motion-dom@12.33.0:
-    resolution: {integrity: sha512-XRPebVypsl0UM+7v0Hr8o9UAj0S2djsQWRdHBd5iVouVpMrQqAI0C/rDAT3QaYnXnHuC5hMcwDHCboNeyYjPoQ==}
+  motion-dom@12.34.0:
+    resolution: {integrity: sha512-Lql3NuEcScRDxTAO6GgUsRHBZOWI/3fnMlkMcH5NftzcN37zJta+bpbMAV9px4Nj057TuvRooMK7QrzMCgtz6Q==}
 
   motion-utils@12.29.2:
     resolution: {integrity: sha512-G3kc34H2cX2gI63RqU+cZq+zWRRPSsNIOjpdl9TN4AQwC4sgwYPl/Q/Obf/d53nOm569T0fYK+tcoSV50BWx8A==}
@@ -5131,14 +5134,16 @@ snapshots:
 
   '@conform-to/dom@1.16.0': {}
 
+  '@conform-to/dom@1.17.0': {}
+
   '@conform-to/react@1.16.0(react@19.2.4)':
     dependencies:
       '@conform-to/dom': 1.16.0
       react: 19.2.4
 
-  '@conform-to/zod@1.16.0(zod@4.3.6)':
+  '@conform-to/zod@1.17.0(zod@4.3.6)':
     dependencies:
-      '@conform-to/dom': 1.16.0
+      '@conform-to/dom': 1.17.0
       zod: 4.3.6
 
   '@date-fns/tz@1.4.1': {}
@@ -8376,9 +8381,9 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
-  framer-motion@12.33.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  framer-motion@12.34.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
-      motion-dom: 12.33.0
+      motion-dom: 12.34.0
       motion-utils: 12.29.2
       tslib: 2.8.1
     optionalDependencies:
@@ -8877,7 +8882,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  motion-dom@12.33.0:
+  motion-dom@12.34.0:
     dependencies:
       motion-utils: 12.29.2
 
