@@ -193,8 +193,8 @@ importers:
         specifier: 3.17.38
         version: 3.17.38
       tailwind-merge:
-        specifier: ^3.4.0
-        version: 3.4.0
+        specifier: ^3.4.1
+        version: 3.4.1
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.1
@@ -4429,11 +4429,11 @@ packages:
   tabbable@6.4.0:
     resolution: {integrity: sha512-05PUHKSNE8ou2dwIxTngl4EzcnsCDZGJ/iCLtDflR/SHB/ny14rXc+qU5P4mG9JkusiV7EivzY9Mhm55AzAvCg==}
 
-  tailwind-merge@2.6.0:
-    resolution: {integrity: sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA==}
+  tailwind-merge@2.6.1:
+    resolution: {integrity: sha512-Oo6tHdpZsGpkKG88HJ8RR1rg/RdnEkQEfMoEk2x1XRI3F1AxeU+ijRXpiVUF4UbLfcxxRGw6TbUINKYdWVsQTQ==}
 
-  tailwind-merge@3.4.0:
-    resolution: {integrity: sha512-uSaO4gnW+b3Y2aWoWfFpX62vn2sR3skfhbjsEnaBI81WD1wBLlHZe5sWf0AqjksNdYTbGBEd0UasQMT3SNV15g==}
+  tailwind-merge@3.4.1:
+    resolution: {integrity: sha512-2OA0rFqWOkITEAOFWSBSApYkDeH9t2B3XSJuI4YztKBzK3mX0737A2qtxDZ7xkw9Zfh0bWl+r34sF3HXV+Ig7Q==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -6541,7 +6541,7 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
       react-transition-state: 2.3.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       recharts: 2.15.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      tailwind-merge: 2.6.0
+      tailwind-merge: 2.6.1
 
   '@tsconfig/bun@1.0.7': {}
 
@@ -9719,9 +9719,9 @@ snapshots:
 
   tabbable@6.4.0: {}
 
-  tailwind-merge@2.6.0: {}
+  tailwind-merge@2.6.1: {}
 
-  tailwind-merge@3.4.0: {}
+  tailwind-merge@3.4.1: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.1):
     dependencies:
