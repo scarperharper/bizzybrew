@@ -11,7 +11,7 @@
 	"dependencies": {
 		"@chakra-ui/react": "^3.33.0",
 		"@conform-to/react": "^1.17.0",
-		"@conform-to/zod": "^1.17.0",
+		"@conform-to/zod": "^1.17.1",
 		"@heroicons/react": "^2.2.0",
 		"@radix-ui/react-accordion": "^1.2.12",
 		"@radix-ui/react-alert-dialog": "^1.1.15",
