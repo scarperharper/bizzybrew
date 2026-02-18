@@ -119,10 +119,10 @@ importers:
         version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       '@supabase/ssr':
         specifier: ^0.8.0
-        version: 0.8.0(@supabase/supabase-js@2.95.3)
+        version: 0.8.0(@supabase/supabase-js@2.96.0)
       '@supabase/supabase-js':
         specifier: latest
-        version: 2.95.3
+        version: 2.96.0
       '@tanstack/react-table':
         specifier: ^8.21.3
         version: 8.21.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -151,8 +151,8 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6(echarts@6.0.0)(react@19.2.4)
       framer-motion:
-        specifier: ^12.34.0
-        version: 12.34.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^12.34.1
+        version: 12.34.1(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       isbot:
         specifier: ^5.1.35
         version: 5.1.35
@@ -190,8 +190,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       sst:
-        specifier: 3.18.1
-        version: 3.18.1
+        specifier: 3.18.6
+        version: 3.18.6
       tailwind-merge:
         specifier: ^3.4.1
         version: 3.4.1
@@ -1797,20 +1797,20 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@supabase/auth-js@2.95.3':
-    resolution: {integrity: sha512-vD2YoS8E2iKIX0F7EwXTmqhUpaNsmbU6X2R0/NdFcs02oEfnHyNP/3M716f3wVJ2E5XHGiTFXki6lRckhJ0Thg==}
+  '@supabase/auth-js@2.96.0':
+    resolution: {integrity: sha512-nk0BQgsACgI5tiJsFCjDtZJOdWHeKplbXIV4TBvAS/i7H3k+vG3zyW8XgqNB5GEY8oHzMfMAGdNsB4RU60GWfA==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/functions-js@2.95.3':
-    resolution: {integrity: sha512-uTuOAKzs9R/IovW1krO0ZbUHSJnsnyJElTXIRhjJTqymIVGcHzkAYnBCJqd7468Fs/Foz1BQ7Dv6DCl05lr7ig==}
+  '@supabase/functions-js@2.96.0':
+    resolution: {integrity: sha512-FG+zOrdbrVKjMlvbHa91mj8+mBS3/V2n2MM+r4kwqoxQYWQGcEhirR2udqwGqPG2tiqgfHnm1RsOWFvcubdjqQ==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/postgrest-js@2.95.3':
-    resolution: {integrity: sha512-LTrRBqU1gOovxRm1vRXPItSMPBmEFqrfTqdPTRtzOILV4jPSueFz6pES5hpb4LRlkFwCPRmv3nQJ5N625V2Xrg==}
+  '@supabase/postgrest-js@2.96.0':
+    resolution: {integrity: sha512-OSQAza492P2NyS4MgDcMyvvRJvjuoFNxgGBS8erBZ5H16Zk4cSwYq47bV/L4ybxQiviC50z8AyXeEL4frL++yA==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/realtime-js@2.95.3':
-    resolution: {integrity: sha512-D7EAtfU3w6BEUxDACjowWNJo/ZRo7sDIuhuOGKHIm9FHieGeoJV5R6GKTLtga/5l/6fDr2u+WcW/m8I9SYmaIw==}
+  '@supabase/realtime-js@2.96.0':
+    resolution: {integrity: sha512-m4ETI6KxiGfD50h5rDkuR2zIQEc0RlfiPV8Bhs2p/NPAmctweA8yb33slsMRLaJafoytadJyo4nP9gvig93wfA==}
     engines: {node: '>=20.0.0'}
 
   '@supabase/ssr@0.8.0':
@@ -1818,12 +1818,12 @@ packages:
     peerDependencies:
       '@supabase/supabase-js': ^2.76.1
 
-  '@supabase/storage-js@2.95.3':
-    resolution: {integrity: sha512-4GxkJiXI3HHWjxpC3sDx1BVrV87O0hfX+wvJdqGv67KeCu+g44SPnII8y0LL/Wr677jB7tpjAxKdtVWf+xhc9A==}
+  '@supabase/storage-js@2.96.0':
+    resolution: {integrity: sha512-7dgEM77GWw9phzLHi+M2vPqOqP99MAbdk/vorpebo/t50JWWS4ckxacHHjmaeLctT4ipVcbfB8rpdbLr95fTcw==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/supabase-js@2.95.3':
-    resolution: {integrity: sha512-Fukw1cUTQ6xdLiHDJhKKPu6svEPaCEDvThqCne3OaQyZvuq2qjhJAd91kJu3PXLG18aooCgYBaB6qQz35hhABg==}
+  '@supabase/supabase-js@2.96.0':
+    resolution: {integrity: sha512-KaIHsO6LU1cuqpYMsprQhfedRJFuTAf4dr8/k4/4Po6urRVXIWzmdY/lHPnf8Mzw2Fh0ueQVQYdaXzOvCBGnGQ==}
     engines: {node: '>=20.0.0'}
 
   '@swc/helpers@0.5.18':
@@ -3130,8 +3130,8 @@ packages:
   fraction.js@5.3.4:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
-  framer-motion@12.34.0:
-    resolution: {integrity: sha512-+/H49owhzkzQyxtn7nZeF4kdH++I2FWrESQ184Zbcw5cEqNHYkE5yxWxcTLSj5lNx3NWdbIRy5FHqUvetD8FWg==}
+  framer-motion@12.34.1:
+    resolution: {integrity: sha512-kcZyNaYQfvE2LlH6+AyOaJAQV4rGp5XbzfhsZpiSZcwDMfZUHhuxLWeyRzf5I7jip3qKRpuimPA9pXXfr111kQ==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -3663,8 +3663,8 @@ packages:
     resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
     engines: {node: '>= 0.8.0'}
 
-  motion-dom@12.34.0:
-    resolution: {integrity: sha512-Lql3NuEcScRDxTAO6GgUsRHBZOWI/3fnMlkMcH5NftzcN37zJta+bpbMAV9px4Nj057TuvRooMK7QrzMCgtz6Q==}
+  motion-dom@12.34.1:
+    resolution: {integrity: sha512-SC7ZC5dRcGwku2g7EsPvI4q/EzHumUbqsDNumBmZTLFg+goBO5LTJvDu9MAxx+0mtX4IA78B2be/A3aRjY0jnw==}
 
   motion-utils@12.29.2:
     resolution: {integrity: sha512-G3kc34H2cX2gI63RqU+cZq+zWRRPSsNIOjpdl9TN4AQwC4sgwYPl/Q/Obf/d53nOm569T0fYK+tcoSV50BWx8A==}
@@ -4317,48 +4317,48 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@3.18.1:
-    resolution: {integrity: sha512-D9MNSiJTQ8dLNCBcHvw5Ii3w1T53+SeFZjYs4i8qK4XQP3krERpIYYMQ8QPMbynhlFY6Y+hhuJb9n/AMVlLivw==}
+  sst-darwin-arm64@3.18.6:
+    resolution: {integrity: sha512-cbSBzLvH2ijW7vQpt0wLPEZhg1Del4+KwY+79g5OQsB6p7PSced9pM5kGtGEe+xoAUV4xWrd3UTHIm4CZWcP/w==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@3.18.1:
-    resolution: {integrity: sha512-TNwpk4ePW/UHa97sn+fjaRCk/LEYC4rsFQHjNnTYc3BnImBSjmxTKUgR7El1x2myKIucRIWvPd21ZZC2HWpwuA==}
+  sst-darwin-x64@3.18.6:
+    resolution: {integrity: sha512-wBN5pD0t8LPJ2UG2l1DZKSXg4KfwatPJL13aFFotE/Uo1YxQ1VKzVpr0SPpndsR0rMkPMHdpVaIIwVk1hiLWGA==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@3.18.1:
-    resolution: {integrity: sha512-tzp7EbpYg4juYlIPg69wf3oOpxnmNIFcUKmx8d76NVNS9fMCHsxyOAMaB0HFbDmr1v7OKFAU9bHz5yEeFwFkMA==}
+  sst-linux-arm64@3.18.6:
+    resolution: {integrity: sha512-tYVeu65VLuhANCdq2KRvkAevJc9Nc6xuApwquTBjFgL4mImEw3HbyjEH3cgrGb75hPDqZ/NXomQntoHGy6PmTw==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@3.18.1:
-    resolution: {integrity: sha512-GGyDJijKiBaAqL+S5BZ+KDjJ3IaaPlTjWJqX5uyKaE5/TDX+tLYzQXUk82akTTv1d3QkYrWmEYQrKcL0GeoMOQ==}
+  sst-linux-x64@3.18.6:
+    resolution: {integrity: sha512-IC9fpxCIt5dEhbGUXeZL0hRd4p+7Mbp5gDvgK8wY08/f3MJP07XqvD2HT+qBHGXdS8RgnBT6uIPUIF1L5tc+Og==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@3.18.1:
-    resolution: {integrity: sha512-JQ3CwLIsWXPWfl4KdYv+JkaCu5Y3Hqu72j/SIfMjImNmUtwJ+qK5nwjA20CAUVK/2nu3n2lolrmbfyvUBu43fw==}
+  sst-linux-x86@3.18.6:
+    resolution: {integrity: sha512-zFbJa5OCc0+Sa5GJBkWefzCu5jOk5rVOiZ1vpk23jCx6KrhlLfSlYqB3WLsynFV1nZ/Js6o5hQ4sdLNMXYJLew==}
     cpu: [x86]
     os: [linux]
 
-  sst-win32-arm64@3.18.1:
-    resolution: {integrity: sha512-TgdsGdPw26vZCnq4/xsCr9boBzFcJWzH3yHA/RspuYHRcHwCh2+pZJR9GkAUMwUjWNRaHuBKUKUiIQJkHlzXiA==}
+  sst-win32-arm64@3.18.6:
+    resolution: {integrity: sha512-fx8axzIY7CY6i6v9AhGpGfwHSQimtfT+g0ntMgVYSt5Hbb5xvX6wJ8g0JXUSCMR/unDDgBFZEqg/H75Iz2gk5w==}
     cpu: [arm64]
     os: [win32]
 
-  sst-win32-x64@3.18.1:
-    resolution: {integrity: sha512-c7+0nbXzbjcrZxxWJGePXSBLqIJN4+E+jCmDmCTdfnpA+bEhdxFyX5aDtT27ldr/mi3kVGkD3P9kdHpGNz2V4A==}
+  sst-win32-x64@3.18.6:
+    resolution: {integrity: sha512-BbLC4g9X/kQR2rZ+EiC7+gVTGH9S8gro/75xqE495TlKWj9Oia9OXqFwZLBODg4SJRJfvbLDyiHtWesnW9aUZg==}
     cpu: [x64]
     os: [win32]
 
-  sst-win32-x86@3.18.1:
-    resolution: {integrity: sha512-/8jyHod8n3YN5ZXkRR5/WFmPXBdrV9GgepRyg95Cm0GQbeyr3XzT45IkMmhAsPEPjXXSJM7p6Dg5aHWeXfBdOA==}
+  sst-win32-x86@3.18.6:
+    resolution: {integrity: sha512-lOhIED80p/7qnHSzZhaCL9jjaCvM4YIqR5d1OxQXF74pKeAhgL/Wi39/bX6z+0C0Ck2S78AuAhHrVJbfktN43g==}
     cpu: [x86]
     os: [win32]
 
-  sst@3.18.1:
-    resolution: {integrity: sha512-UUyRq5WVR5Cd73TeGgcgI4BDhaIvyGfA/PpCr+qA0yly6r29r5qHJlUEGaKzmIPOpJUALSoG0blYpWhoZ9xowA==}
+  sst@3.18.6:
+    resolution: {integrity: sha512-EAyhEGWw1w16ARJbNNQtUlMHcvVkMXCft2+4+w5k0jiM3BrYBlX0H5btgLITI3gMbKe3hSh3xrf3jRX2mzvc0A==}
     hasBin: true
 
   stable-hash-x@0.2.0:
@@ -6476,19 +6476,19 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@supabase/auth-js@2.95.3':
+  '@supabase/auth-js@2.96.0':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/functions-js@2.95.3':
+  '@supabase/functions-js@2.96.0':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/postgrest-js@2.95.3':
+  '@supabase/postgrest-js@2.96.0':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/realtime-js@2.95.3':
+  '@supabase/realtime-js@2.96.0':
     dependencies:
       '@types/phoenix': 1.6.7
       '@types/ws': 8.18.1
@@ -6498,23 +6498,23 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@supabase/ssr@0.8.0(@supabase/supabase-js@2.95.3)':
+  '@supabase/ssr@0.8.0(@supabase/supabase-js@2.96.0)':
     dependencies:
-      '@supabase/supabase-js': 2.95.3
+      '@supabase/supabase-js': 2.96.0
       cookie: 1.1.1
 
-  '@supabase/storage-js@2.95.3':
+  '@supabase/storage-js@2.96.0':
     dependencies:
       iceberg-js: 0.8.1
       tslib: 2.8.1
 
-  '@supabase/supabase-js@2.95.3':
+  '@supabase/supabase-js@2.96.0':
     dependencies:
-      '@supabase/auth-js': 2.95.3
-      '@supabase/functions-js': 2.95.3
-      '@supabase/postgrest-js': 2.95.3
-      '@supabase/realtime-js': 2.95.3
-      '@supabase/storage-js': 2.95.3
+      '@supabase/auth-js': 2.96.0
+      '@supabase/functions-js': 2.96.0
+      '@supabase/postgrest-js': 2.96.0
+      '@supabase/realtime-js': 2.96.0
+      '@supabase/storage-js': 2.96.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -8400,9 +8400,9 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
-  framer-motion@12.34.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  framer-motion@12.34.1(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
-      motion-dom: 12.34.0
+      motion-dom: 12.34.1
       motion-utils: 12.29.2
       tslib: 2.8.1
     optionalDependencies:
@@ -8903,7 +8903,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  motion-dom@12.34.0:
+  motion-dom@12.34.1:
     dependencies:
       motion-utils: 12.29.2
 
@@ -9597,31 +9597,31 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  sst-darwin-arm64@3.18.1:
+  sst-darwin-arm64@3.18.6:
     optional: true
 
-  sst-darwin-x64@3.18.1:
+  sst-darwin-x64@3.18.6:
     optional: true
 
-  sst-linux-arm64@3.18.1:
+  sst-linux-arm64@3.18.6:
     optional: true
 
-  sst-linux-x64@3.18.1:
+  sst-linux-x64@3.18.6:
     optional: true
 
-  sst-linux-x86@3.18.1:
+  sst-linux-x86@3.18.6:
     optional: true
 
-  sst-win32-arm64@3.18.1:
+  sst-win32-arm64@3.18.6:
     optional: true
 
-  sst-win32-x64@3.18.1:
+  sst-win32-x64@3.18.6:
     optional: true
 
-  sst-win32-x86@3.18.1:
+  sst-win32-x86@3.18.6:
     optional: true
 
-  sst@3.18.1:
+  sst@3.18.6:
     dependencies:
       aws-sdk: 2.1692.0
       aws4fetch: 1.0.18
@@ -9629,14 +9629,14 @@ snapshots:
       opencontrol: 0.0.6
       openid-client: 5.6.4
     optionalDependencies:
-      sst-darwin-arm64: 3.18.1
-      sst-darwin-x64: 3.18.1
-      sst-linux-arm64: 3.18.1
-      sst-linux-x64: 3.18.1
-      sst-linux-x86: 3.18.1
-      sst-win32-arm64: 3.18.1
-      sst-win32-x64: 3.18.1
-      sst-win32-x86: 3.18.1
+      sst-darwin-arm64: 3.18.6
+      sst-darwin-x64: 3.18.6
+      sst-linux-arm64: 3.18.6
+      sst-linux-x64: 3.18.6
+      sst-linux-x86: 3.18.6
+      sst-win32-arm64: 3.18.6
+      sst-win32-x64: 3.18.6
+      sst-win32-x86: 3.18.6
     transitivePeerDependencies:
       - '@cfworker/json-schema'
       - supports-color
