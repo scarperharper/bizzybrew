@@ -6,6 +6,7 @@ export class Brew extends Entity {
   total_cost: number;
   duty: number;
   income: number;
+  image_url?: string;
 
   constructor(data: Brew) {
     super(data);
@@ -14,6 +15,7 @@ export class Brew extends Entity {
     this.total_cost = data.total_cost;
     this.duty = data.duty;
     this.income = data.income;
+    this.image_url = data.image_url;
   }
 }
 

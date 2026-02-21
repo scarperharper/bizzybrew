@@ -13,7 +13,23 @@ export async function getBrews(
 	if (result.data) {
 		return {
 			success: true,
-			data: result.data,
+			data: await Promise.all(
+				result.data.map(async (brew) => {
+					let image_url;
+
+					if (brew.image_url) {
+						const { data } = await supabaseClient.storage
+							.from('images')
+							.createSignedUrl(brew.image_url, 3600);
+
+						image_url = data?.signedUrl;
+					}
+					return {
+						...brew,
+						image_url,
+					} as Brew;
+				}),
+			),
 		};
 	}
 	return {
@@ -32,11 +48,22 @@ export async function getBrewById(
 		.eq('id', id)
 		.single();
 
+	let image_url;
+
+	if (result.data.image_url) {
+		const { data } = await supabaseClient.storage
+			.from('images')
+			.createSignedUrl(result.data.image_url, 3600);
+
+		image_url = data?.signedUrl;
+	}
+
 	if (result.data) {
 		return {
 			success: true,
 			data: {
 				...result.data,
+				image_url,
 				brew_date: new Date(result.data.brew_date),
 			},
 		};
@@ -60,6 +87,7 @@ export async function insertOneBrew(
 			total_cost: 0,
 			duty: 0,
 			user_id: userId,
+			image_url: brew.image_url,
 		})
 		.select();
 	if (result.data) {
@@ -80,7 +108,12 @@ export async function updateOneBrew(
 ): Promise<ApiResult<Brew>> {
 	const result = await supabaseClient
 		.from('brew')
-		.update({ name: brew.name, brew_date: brew.brew_date, duty: brew.duty })
+		.update({
+			name: brew.name,
+			brew_date: brew.brew_date,
+			duty: brew.duty,
+			image_url: brew.image_url,
+		})
 		.eq('id', brew.id)
 		.select();
 

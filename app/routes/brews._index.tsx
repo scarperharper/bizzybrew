@@ -19,7 +19,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	return { recentBrewsResponse };
 };
 
-const BrewsIndex = () => {
+export default function BrewsIndex() {
 	const { recentBrewsResponse } = useLoaderData<typeof loader>();
 	const recentBrews = recentBrewsResponse.data as unknown as RecentBrew[];
 	return (
@@ -34,5 +34,4 @@ const BrewsIndex = () => {
 			</div>
 		</div>
 	);
-};
-export default BrewsIndex;
+}
