@@ -2,13 +2,13 @@ import { deleteOneSaleItemById } from "@/data/api/SaleItemApi";
 import type { ActionFunctionArgs } from "react-router";
 import { redirect } from "react-router";
 import invariant from "tiny-invariant";
-import { getAuthenticatedClient } from "~/supabase.auth.server";
+import { authContext } from "~/context";
 
-export const action = async ({ request, params }: ActionFunctionArgs) => {
+export const action = async ({ params, context }: ActionFunctionArgs) => {
   invariant(params.saleId, "Missing saleId param");
   invariant(params.saleItemId, "Missing saleItemId param");
 
-  const { supabaseClient, userId } = await getAuthenticatedClient(request);
+  const { supabaseClient, userId } = context.get(authContext);
 
   if (!userId) {
     return redirect("/sign-in");

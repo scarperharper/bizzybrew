@@ -3,10 +3,10 @@ import { getReceiptSummary } from '@/data/api/ReceiptApi';
 import { ReceiptSummary } from '@/data/models/Receipt';
 import { type LoaderFunctionArgs, redirect } from 'react-router';
 import { useLoaderData } from 'react-router';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const loader = async ({ context }: LoaderFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

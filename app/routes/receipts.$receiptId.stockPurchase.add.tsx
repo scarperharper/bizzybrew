@@ -54,7 +54,7 @@ import {
 } from '@/components/ui/dialog';
 import type { ApiResult } from '@/data/api/ApiResult';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import { format } from 'date-fns';
 
 const purchaseSchema = z.object({
@@ -71,10 +71,10 @@ const createStockLineSchema = z.object({
 	stockLineGroupId: z.coerce.number().positive('Please select an option'),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.receiptId, 'Missing receiptId param');
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -97,8 +97,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	};
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
