@@ -30,14 +30,17 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	return await getBrews(supabaseClient);
 };
 
-const Brews = () => {
+export default function Brews() {
 	const response = useLoaderData<typeof loader>();
 
 	const brews = response.data as unknown as Brew[];
 
 	return (
 		<div className="flex flex-row flex-wrap py-4">
-			<aside className="w-full sm:w-1/3 md:w-1/4 px-2 max-h-screen overflow-y-auto">
+			<aside
+				className="w-full md:w-1/4 px-2 max-h-screen overflow-y-auto hidden lg:inline-flex
+			"
+			>
 				<div className="sticky top-0 p-4 w-full">
 					<div className="flex space-x-2 justify-between items-start">
 						<div className="flex flex-col space-y-1.5 p-6">
@@ -74,10 +77,9 @@ const Brews = () => {
 					</ul>
 				</div>
 			</aside>
-			<main role="main" className="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
+			<main role="main" className="w-full lg:w-3/4 pt-1 px-2">
 				<Outlet />
 			</main>
 		</div>
 	);
-};
-export default Brews;
+}
