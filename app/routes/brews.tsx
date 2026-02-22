@@ -38,10 +38,10 @@ export default function Brews() {
 	return (
 		<div className="flex flex-row flex-wrap py-4">
 			<aside
-				className="w-full md:w-1/4 px-2 max-h-screen overflow-y-auto hidden lg:inline-flex
+				className="w-full md:w-1/4 px-2 overflow-y-auto hidden lg:inline-flex
 			"
 			>
-				<div className="sticky top-0 p-4 w-full">
+				<div className="top-0 p-4 w-full">
 					<div className="flex space-x-2 justify-between items-start">
 						<div className="flex flex-col space-y-1.5 p-6">
 							<h3 className="text-2xl font-semibold leading-none tracking-tight text-secondary">

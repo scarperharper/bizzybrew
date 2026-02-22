@@ -129,12 +129,16 @@ export async function updateOneBrew(
 	};
 }
 
-export async function getRecentBrews(
-	supabaseClient: SupabaseClient,
-	userId: string,
-	count: number = 10,
-): Promise<ApiResult<RecentBrew[]>> {
-	const result = await supabaseClient
+export async function getRecentBrews({
+	supabaseClient,
+	offset = 0,
+	limit = 10,
+}: {
+	supabaseClient: SupabaseClient;
+	offset?: number;
+	limit?: number;
+}): Promise<ApiResult<RecentBrew[]>> {
+	const { data, error } = await supabaseClient
 		.from('brew')
 		.select(
 			`
@@ -144,20 +148,40 @@ export async function getRecentBrews(
       total_cost,
       duty,
       user_id,
+	  image_url,
       view_recent_usage_summary ( group_name, sum_cost, sum_amount )
       `,
 		)
+		.range(offset, offset + limit - 1)
 		.order('brew_date', { ascending: false })
-		.limit(count);
+		.overrideTypes<RecentBrew[]>();
 
-	if (result.data) {
+	if (data) {
 		return {
 			success: true,
-			data: result.data as unknown as RecentBrew[],
+			data: await Promise.all(
+				data.map(async (brew) => {
+					let image_url;
+
+					if (brew.image_url) {
+						const { data } = await supabaseClient.storage
+							.from('images')
+							.createSignedUrl(brew.image_url, 3600);
+
+						image_url = data?.signedUrl;
+					}
+					return {
+						...brew,
+						image_url,
+					};
+				}),
+			),
+			offset,
+			limit,
 		};
 	}
 	return {
 		success: false,
-		error: result.error,
+		error,
 	};
 }
