@@ -5,8 +5,8 @@ import { ModeToggle } from '../mode-toggle';
 export function Header() {
 	return (
 		<div className="border-b">
-			<div className="flex h-16 items-center px-4">
-				<div className="max-w-32 mr-2">
+			<div className="flex h-16 items-center px-4 overflow-x-scroll">
+				<div className="max-w-32 mr-2 hidden md:inline-flex">
 					<BizzybrewLogo className="fill-secondary" />
 				</div>
 

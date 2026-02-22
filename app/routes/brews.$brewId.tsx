@@ -44,7 +44,7 @@ export default function BrewDetail() {
 			<header id="header" className="relative z-20 mb-8">
 				<div className="flex space-x-4 justify-between items-start">
 					<div className="flex flex-col ">
-						<div className="w-40 h-40">
+						<div className="w-40 h-40 hidden md:inline-flex">
 							{brew.image_url ? (
 								<img
 									src={brew.image_url}
