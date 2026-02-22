@@ -1,12 +1,25 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
-import type { LinksFunction } from 'react-router';
+import type { LinksFunction, MiddlewareFunction } from 'react-router';
 import stylesheet from '~/tailwind.css?url';
 import { Header } from '@/components/layout/header';
 import { ThemeProvider } from 'next-themes';
+import { authContext } from '~/context';
+import { getAuthenticatedClient } from '~/supabase.auth.server';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: stylesheet },
 ];
+
+export const middleware: MiddlewareFunction[] = [
+	async ({ request, context }) => {
+		const authResult = await getAuthenticatedClient(request);
+		context.set(authContext, authResult);
+	},
+];
+
+export async function loader() {
+	return null;
+}
 
 export default function App() {
 	return (

@@ -18,7 +18,7 @@ import { AvailableProductsPanel } from '@/components/product/available-products-
 import { SalesSummaryPanel } from '@/components/sale/sales-summary-panel';
 import { getSalesSummary } from '@/data/api/SaleApi';
 import { SaleSummary } from '@/data/models/Sale';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
 export const meta: MetaFunction = () => {
 	return [
@@ -27,8 +27,8 @@ export const meta: MetaFunction = () => {
 	];
 };
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const loader = async ({ context }: LoaderFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

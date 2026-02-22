@@ -30,7 +30,7 @@ import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { SaleItem } from '@/data/models/SaleItem';
 import { insertOneSaleItem } from '@/data/api/SaleItemApi';
 import { Input } from '@/components/form-elements/input';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import { format } from 'date-fns';
 
 const schema = z.object({
@@ -41,11 +41,11 @@ const schema = z.object({
 	quantity: z.coerce.number().positive('Quantity must be positive'),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.saleId, 'Missing saleId param');
 	const saleId: number = parseInt(params.saleId);
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -61,8 +61,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return { saleResult, productsResult };
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

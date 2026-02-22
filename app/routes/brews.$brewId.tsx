@@ -13,14 +13,14 @@ import { type LoaderFunctionArgs, redirect } from 'react-router';
 import { Outlet, useLoaderData } from 'react-router';
 import { format } from 'date-fns';
 import invariant from 'tiny-invariant';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import BizzybrewBubble from '@/components/local/bizzybrew-bubble';
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.brewId, 'Missing brewId param');
 	const brewId: number = parseInt(params.brewId);
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

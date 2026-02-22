@@ -29,7 +29,7 @@ import { getBrewById } from '@/data/api/BrewApi';
 import { Brew } from '@/data/models/Brew';
 import { addStockUsage } from '@/data/api/StockUsageApi';
 import { Combobox } from '@/components/local/combobox';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import { format } from 'date-fns';
 
 const schema = z.object({
@@ -39,10 +39,10 @@ const schema = z.object({
 	amount: z.coerce.number().positive('Please choose a valid amount'),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.brewId, 'Missing stockUsageId param');
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -59,8 +59,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return { brewResult, stockPurchaseSummaryResult };
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

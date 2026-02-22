@@ -18,7 +18,7 @@ import { Input } from '@/components/form-elements/input';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
 import { FileInput } from '@/components/form-elements/file-input';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import {
 	redirect,
@@ -37,10 +37,10 @@ const schema = z.object({
 	image: z.instanceof(File).optional(),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.brewId, 'Missing brewId param');
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -53,8 +53,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return { brew };
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

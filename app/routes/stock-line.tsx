@@ -7,10 +7,10 @@ import {
 import { StockLine, StockLineSummary } from '@/data/models/StockLine';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { Form, NavLink, Outlet, redirect, useLoaderData } from 'react-router';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -23,8 +23,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	return redirect(`/stock/${(stockLine.data as StockLine).id}/edit`);
 };
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const loader = async ({ context }: LoaderFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
