@@ -308,10 +308,10 @@ export default function AddStockUsage() {
 				</DrawerContent>
 			</Drawer>
 
-			<Dialog open={createStockLineDialog.isOpen}>
+			<Dialog open={createStockLineDialog.open}>
 				<DialogOverlay className="DialogOverlay" />
 				<DialogContent
-					className="sm:max-w-[425px]"
+					className="sm:max-w-106.25"
 					onPointerDownOutside={(e) => e.preventDefault()}
 				>
 					<DialogHeader>
