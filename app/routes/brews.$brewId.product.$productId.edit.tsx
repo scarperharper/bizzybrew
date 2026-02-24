@@ -32,7 +32,7 @@ import {
 import { Product } from '@/data/models/Product';
 import { ProductType } from '@/data/models/ProductType';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
 const schema = z.object({
 	id: z.coerce.number(),
@@ -43,11 +43,11 @@ const schema = z.object({
 	list_price: z.coerce.number().min(0, 'Please choose a valid amount'),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.brewId, 'Missing brewId param');
 	invariant(params.productId, 'Missing productId param');
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -75,8 +75,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	};
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

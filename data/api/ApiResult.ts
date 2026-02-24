@@ -1,7 +1,9 @@
-import { PostgrestError } from "@supabase/supabase-js";
+import { PostgrestError } from '@supabase/supabase-js';
 
 export type ApiResult<T> = {
-  success: boolean;
-  data?: T | T[];
-  error?: PostgrestError | null;
+	success: boolean;
+	data?: T | T[];
+	error?: PostgrestError | null;
+	offset?: number;
+	limit?: number;
 };

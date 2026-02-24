@@ -17,7 +17,8 @@ import { InputHidden } from '@/components/form-elements/input-hidden';
 import { Input } from '@/components/form-elements/input';
 import { SubmitButton } from '@/components/form-elements/submit';
 import { CurrencyInput } from '@/components/form-elements/currency-input';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { FileInput } from '@/components/form-elements/file-input';
+import { authContext } from '~/context';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import {
 	redirect,
@@ -33,12 +34,13 @@ const schema = z.object({
 	name: z.string().min(1, 'Brew Name is required'),
 	brew_date: z.coerce.date(),
 	duty: z.coerce.number().optional(),
+	image: z.instanceof(File).optional(),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.brewId, 'Missing brewId param');
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -51,8 +53,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return { brew };
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -65,7 +67,30 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 		return submission.reply();
 	}
 
-	const { id, name, brew_date, duty } = submission.value;
+	const { id, name, brew_date, duty, image } = submission.value;
+
+	let image_url: string | undefined;
+
+	if (image && image.size > 0) {
+		const fileExt = image.name.split('.').pop();
+		const fileName = `${userId}/${Date.now()}.${fileExt}`;
+
+		const { data: uploadData, error: uploadError } =
+			await supabaseClient.storage
+				.from('images')
+				.upload(fileName, image, {
+					cacheControl: '3600',
+					upsert: false,
+				});
+
+		if (uploadError) {
+			return submission.reply({
+				formErrors: [`Failed to upload image: ${uploadError.message}`],
+			});
+		}
+
+		image_url = uploadData.path;
+	}
 
 	if (id) {
 		const update: Partial<Brew> = {
@@ -73,6 +98,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			name,
 			brew_date,
 			duty,
+			...(image_url && { image_url }),
 		};
 
 		const updated = await updateOneBrew(supabaseClient, update);
@@ -82,6 +108,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 			name,
 			brew_date,
 			duty,
+			...(image_url && { image_url }),
 		};
 
 		const inserted = await insertOneBrew(supabaseClient, userId, insert);
@@ -125,6 +152,7 @@ export default function Editbrew() {
 			<DrawerContent>
 				<Form
 					method="post"
+					encType="multipart/form-data"
 					className="flex flex-col flex-1"
 					{...getFormProps(form)}
 				>
@@ -158,6 +186,12 @@ export default function Editbrew() {
 							name="duty"
 							defaultValue={fields.duty.defaultValue}
 							errors={fields.duty.errors}
+						/>
+						<FileInput
+							label="Brew Image"
+							name="image"
+							errors={fields.image?.errors}
+							currentImage={brewData.image_url}
 						/>
 					</DrawerBody>
 					<DrawerFooter>

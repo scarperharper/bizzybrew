@@ -15,20 +15,18 @@ import {
 } from 'react-router';
 import { format } from 'date-fns';
 import invariant from 'tiny-invariant';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.receiptId, 'Missing receiptId param');
 	const receiptId: number = parseInt(params.receiptId);
 
-	// Authenticate once at the loader level
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
 	}
 
-	// Pass the authenticated client to API functions
 	const [receiptResult, purchasesForReceiptIdResult] = await Promise.all([
 		getReceiptById(supabaseClient, receiptId),
 		getPurchasesForReceiptId(supabaseClient, receiptId),

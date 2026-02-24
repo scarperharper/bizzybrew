@@ -29,7 +29,7 @@ import { getCustomers, insertOneCustomer } from '@/data/api/CustomerApi';
 import { Customer } from '@/data/models/Customer';
 import { insertOneSale } from '@/data/api/SaleApi';
 import { Sale } from '@/data/models/Sale';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import { Input } from '@/components/form-elements/input';
 import { format } from 'date-fns';
 
@@ -42,8 +42,8 @@ const createCustomerSchema = z.object({
 	name: z.string().min(1, 'Name is required'),
 });
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const loader = async ({ context }: LoaderFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -56,8 +56,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	return { customersResult };
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

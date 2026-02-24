@@ -13,7 +13,23 @@ export async function getBrews(
 	if (result.data) {
 		return {
 			success: true,
-			data: result.data,
+			data: await Promise.all(
+				result.data.map(async (brew) => {
+					let image_url;
+
+					if (brew.image_url) {
+						const { data } = await supabaseClient.storage
+							.from('images')
+							.createSignedUrl(brew.image_url, 3600);
+
+						image_url = data?.signedUrl;
+					}
+					return {
+						...brew,
+						image_url,
+					} as Brew;
+				}),
+			),
 		};
 	}
 	return {
@@ -32,11 +48,22 @@ export async function getBrewById(
 		.eq('id', id)
 		.single();
 
+	let image_url;
+
+	if (result.data.image_url) {
+		const { data } = await supabaseClient.storage
+			.from('images')
+			.createSignedUrl(result.data.image_url, 3600);
+
+		image_url = data?.signedUrl;
+	}
+
 	if (result.data) {
 		return {
 			success: true,
 			data: {
 				...result.data,
+				image_url,
 				brew_date: new Date(result.data.brew_date),
 			},
 		};
@@ -60,6 +87,7 @@ export async function insertOneBrew(
 			total_cost: 0,
 			duty: 0,
 			user_id: userId,
+			image_url: brew.image_url,
 		})
 		.select();
 	if (result.data) {
@@ -80,7 +108,12 @@ export async function updateOneBrew(
 ): Promise<ApiResult<Brew>> {
 	const result = await supabaseClient
 		.from('brew')
-		.update({ name: brew.name, brew_date: brew.brew_date, duty: brew.duty })
+		.update({
+			name: brew.name,
+			brew_date: brew.brew_date,
+			duty: brew.duty,
+			image_url: brew.image_url,
+		})
 		.eq('id', brew.id)
 		.select();
 
@@ -96,12 +129,16 @@ export async function updateOneBrew(
 	};
 }
 
-export async function getRecentBrews(
-	supabaseClient: SupabaseClient,
-	userId: string,
-	count: number = 10,
-): Promise<ApiResult<RecentBrew[]>> {
-	const result = await supabaseClient
+export async function getRecentBrews({
+	supabaseClient,
+	offset = 0,
+	limit = 10,
+}: {
+	supabaseClient: SupabaseClient;
+	offset?: number;
+	limit?: number;
+}): Promise<ApiResult<RecentBrew[]>> {
+	const { data, error } = await supabaseClient
 		.from('brew')
 		.select(
 			`
@@ -111,20 +148,40 @@ export async function getRecentBrews(
       total_cost,
       duty,
       user_id,
+	  image_url,
       view_recent_usage_summary ( group_name, sum_cost, sum_amount )
       `,
 		)
+		.range(offset, offset + limit - 1)
 		.order('brew_date', { ascending: false })
-		.limit(count);
+		.overrideTypes<RecentBrew[]>();
 
-	if (result.data) {
+	if (data) {
 		return {
 			success: true,
-			data: result.data as unknown as RecentBrew[],
+			data: await Promise.all(
+				data.map(async (brew) => {
+					let image_url;
+
+					if (brew.image_url) {
+						const { data } = await supabaseClient.storage
+							.from('images')
+							.createSignedUrl(brew.image_url, 3600);
+
+						image_url = data?.signedUrl;
+					}
+					return {
+						...brew,
+						image_url,
+					};
+				}),
+			),
+			offset,
+			limit,
 		};
 	}
 	return {
 		success: false,
-		error: result.error,
+		error,
 	};
 }

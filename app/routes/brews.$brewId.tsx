@@ -13,13 +13,14 @@ import { type LoaderFunctionArgs, redirect } from 'react-router';
 import { Outlet, useLoaderData } from 'react-router';
 import { format } from 'date-fns';
 import invariant from 'tiny-invariant';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
+import BizzybrewBubble from '@/components/local/bizzybrew-bubble';
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.brewId, 'Missing brewId param');
 	const brewId: number = parseInt(params.brewId);
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -41,8 +42,21 @@ export default function BrewDetail() {
 	return (
 		<div>
 			<header id="header" className="relative z-20 mb-8">
-				<div className="flex space-x-2 justify-between items-start">
-					<div className="flex flex-col">
+				<div className="flex space-x-4 justify-between items-start">
+					<div className="flex flex-col ">
+						<div className="w-40 h-40 hidden md:inline-flex">
+							{brew.image_url ? (
+								<img
+									src={brew.image_url}
+									className="h-full"
+									alt=""
+								/>
+							) : (
+								<BizzybrewBubble className="fill-secondary" />
+							)}
+						</div>
+					</div>
+					<div className="flex flex-col grow">
 						<div>
 							<p className="mb-2 text-sm leading-6 font-semibold text-secondary dark:text-secondary">
 								{format(brew.brew_date, 'PPP')}
@@ -67,6 +81,7 @@ export default function BrewDetail() {
 							Proceeds: <Currency amount={brew.income} />
 						</p>
 					</div>
+
 					<div className="flex flex-col">
 						<EditButton
 							text="Edit"

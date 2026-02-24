@@ -12,13 +12,13 @@ import {
 import { type LoaderFunctionArgs, redirect } from 'react-router';
 import { Outlet, useLoaderData } from 'react-router';
 import invariant from 'tiny-invariant';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.stockLineId, 'Missing stockLineId param');
 	const stockLineId: number = parseInt(params.stockLineId);
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');

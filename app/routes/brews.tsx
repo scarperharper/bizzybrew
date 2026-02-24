@@ -4,10 +4,10 @@ import { getBrews, insertOneBrew } from '@/data/api/BrewApi';
 import { Brew } from '@/data/models/Brew';
 import type { ActionFunctionArgs, LoaderFunctionArgs } from 'react-router';
 import { Form, NavLink, Outlet, redirect, useLoaderData } from 'react-router';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -20,8 +20,8 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 	return redirect(`/brews/${(brew.data as Brew).id}/edit`);
 };
 
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const loader = async ({ context }: LoaderFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -30,15 +30,18 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 	return await getBrews(supabaseClient);
 };
 
-const Brews = () => {
+export default function Brews() {
 	const response = useLoaderData<typeof loader>();
 
 	const brews = response.data as unknown as Brew[];
 
 	return (
 		<div className="flex flex-row flex-wrap py-4">
-			<aside className="w-full sm:w-1/3 md:w-1/4 px-2 max-h-screen overflow-y-auto">
-				<div className="sticky top-0 p-4 w-full">
+			<aside
+				className="w-full md:w-1/4 px-2 overflow-y-auto hidden lg:inline-flex
+			"
+			>
+				<div className="top-0 p-4 w-full">
 					<div className="flex space-x-2 justify-between items-start">
 						<div className="flex flex-col space-y-1.5 p-6">
 							<h3 className="text-2xl font-semibold leading-none tracking-tight text-secondary">
@@ -74,10 +77,9 @@ const Brews = () => {
 					</ul>
 				</div>
 			</aside>
-			<main role="main" className="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
+			<main role="main" className="w-full lg:w-3/4 pt-1 px-2">
 				<Outlet />
 			</main>
 		</div>
 	);
-};
-export default Brews;
+}

@@ -21,7 +21,7 @@ import {
 	updateOneReceipt,
 } from '@/data/api/ReceiptApi';
 import { Receipt } from '@/data/models/Receipt';
-import { getAuthenticatedClient } from '~/supabase.auth.server';
+import { authContext } from '~/context';
 import { z } from 'zod';
 import { getZodConstraint, parseWithZod } from '@conform-to/zod/v4';
 import { useForm, getFormProps } from '@conform-to/react';
@@ -36,10 +36,10 @@ const schema = z.object({
 	date: z.date(),
 });
 
-export const loader = async ({ params, request }: LoaderFunctionArgs) => {
+export const loader = async ({ params, context }: LoaderFunctionArgs) => {
 	invariant(params.receiptId, 'Missing receiptId param');
 
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
@@ -55,8 +55,8 @@ export const loader = async ({ params, request }: LoaderFunctionArgs) => {
 	return { defaultValue: receiptResponse.data as Receipt };
 };
 
-export const action = async ({ request }: ActionFunctionArgs) => {
-	const { supabaseClient, userId } = await getAuthenticatedClient(request);
+export const action = async ({ request, context }: ActionFunctionArgs) => {
+	const { supabaseClient, userId } = context.get(authContext);
 
 	if (!userId) {
 		return redirect('/sign-in');
