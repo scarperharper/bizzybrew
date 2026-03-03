@@ -154,8 +154,8 @@ importers:
         specifier: ^3.0.6
         version: 3.0.6(echarts@6.0.0)(react@19.2.4)
       framer-motion:
-        specifier: ^12.34.3
-        version: 12.34.3(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^12.34.4
+        version: 12.34.4(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       isbot:
         specifier: ^5.1.35
         version: 5.1.35
@@ -193,8 +193,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       sst:
-        specifier: 4.1.3
-        version: 4.1.3
+        specifier: 4.1.5
+        version: 4.1.5
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -3102,8 +3102,8 @@ packages:
   fraction.js@5.3.4:
     resolution: {integrity: sha512-1X1NTtiJphryn/uLQz3whtY6jK3fTqoE3ohKs0tT+Ujr1W59oopxmoEh7Lu5p6vBaPbgoM0bzveAW4Qi5RyWDQ==}
 
-  framer-motion@12.34.3:
-    resolution: {integrity: sha512-v81ecyZKYO/DfpTwHivqkxSUBzvceOpoI+wLfgCgoUIKxlFKEXdg0oR9imxwXumT4SFy8vRk9xzJ5l3/Du/55Q==}
+  framer-motion@12.34.4:
+    resolution: {integrity: sha512-q1PwNhc1XJ3qYG7nc9+pEU5P3tnjB6Eh9vv5gGzy61nedDLB4+xk5peMCWhKM0Zn6sfhgunf/q9n0UgCoyKOBA==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0 || ^19.0.0
@@ -4187,48 +4187,48 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@4.1.3:
-    resolution: {integrity: sha512-ZGbMtVHWMJH3/+VFXXO1jAueWAib8EPExgTtoxZN6WEUz+5mvfOd+jz0dq6qL0F9QAyc9P/RZw+CnWdEvUNrmg==}
+  sst-darwin-arm64@4.1.5:
+    resolution: {integrity: sha512-CeCxk2e5yYMZ8B+kaS8sPaCKHu1oturOyDVXdcsOZTI4/2jbYQVYQHKUZmlLT6rH243xpTphxr92IS1E+WqyeQ==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@4.1.3:
-    resolution: {integrity: sha512-X8Ea7ao82Pjqqr0v46mb1XMKTXfWcIaPQDLqwksjjll15M1xCXJTefN9YRSpHl+4Zd5g7JtF1AV4FgM48cF8gA==}
+  sst-darwin-x64@4.1.5:
+    resolution: {integrity: sha512-wzP6pn5kgJSQLrhLhAzByllcN6V8WTldHtA9sPOPCPzZL2uDyslcK5KbTmv4RFX8CPeTvjum8HYAqEDFxutztQ==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@4.1.3:
-    resolution: {integrity: sha512-dDGqPJwB3RQ4VM5fn8Yzd9rJqRscYm0ueDoiPd/zTec+NfsziIR7duqBlrxS18q5OX6dmWeOxJqbhxvSseHMwQ==}
+  sst-linux-arm64@4.1.5:
+    resolution: {integrity: sha512-l2O1OynvEQqTGej5fLfUQ2YkesgDWO+VmeU1LAinIUc7irTxeT5E48NFpnJM2mbGEUiBrjnalzaVmn89qt/Q9A==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@4.1.3:
-    resolution: {integrity: sha512-i9LjiU5fsJ2iY9tB/vBCaD4MYAog/zmyIG5ApKe4kHIMVKzg/uSpuPON+A/AsJVKlsoDJzjM3sFjjfrH4GoHiA==}
+  sst-linux-x64@4.1.5:
+    resolution: {integrity: sha512-Jnqbr9AzqInIhNPI3ydvzsilPmcLlX33026sAfmZpNSpwIobUuGRjTBEe1uOEi06al030YSKkpHPxCvJUktE9g==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@4.1.3:
-    resolution: {integrity: sha512-z6AXpFB0WXlGvd+1C+g/3H2O11huWT/Mt/ANyd/OXUYxMtmfkIuJrBpcirXYErJOAPjMfXuBS3X7iqYAhkMpHA==}
+  sst-linux-x86@4.1.5:
+    resolution: {integrity: sha512-P85R5VrVs1a+hS3ngBeDdzWWqfnXquJ+IfA0bOF47r5jp7iSs5CWMLBlLPtjx1uZcBKCslddk1NlJw6SyG1AoQ==}
     cpu: [x86]
     os: [linux]
 
-  sst-win32-arm64@4.1.3:
-    resolution: {integrity: sha512-DyBTtJ+vB0qDGtx2MVtqXDZOTegoCLZ3TX6AYZUZJZTSdvxJq1oYPX5sdhLB/c2UETQSxIBfoUDnTzJHwIyXDQ==}
+  sst-win32-arm64@4.1.5:
+    resolution: {integrity: sha512-xzXUyNR3YRlg39MmOFbbNJRyyM1bsR1FEllRuReIQwYAVBW5TjU/c+i0PA/ewwBMRTWrYa5ryraEDzTw3WxhvQ==}
     cpu: [arm64]
     os: [win32]
 
-  sst-win32-x64@4.1.3:
-    resolution: {integrity: sha512-dR9XXjWpH7GzMapdk3JEz0qtHuaEHkgItAqWGGI6YTdSi7wx51/l3F3g76hBfzK+vtmwYkp/ZT4WVXXQ5DKwAQ==}
+  sst-win32-x64@4.1.5:
+    resolution: {integrity: sha512-hM8VeRUqlCeFEGMkAVciG+Rf/rqZosTQWYN5JBExNuAE3Dkfk4IE258VTWPhfgzvzjhpnAPkmLirXh9T9lFXxg==}
     cpu: [x64]
     os: [win32]
 
-  sst-win32-x86@4.1.3:
-    resolution: {integrity: sha512-M1q0L+7313M4WazuWQpHcK1tnA2TObanvKSQqOm5Knn8y2+2v4OZNpNcyKp/zBRlystyu8P0kcCQFsCU0zKK/A==}
+  sst-win32-x86@4.1.5:
+    resolution: {integrity: sha512-LFsCi8pvl5dFL3he+wTOI+2iSDXM6dRQD0c4i9p89/KdWRRgXKQykw51KAar2shVoaLjCBkZz/E/4RkMXmD0KA==}
     cpu: [x86]
     os: [win32]
 
-  sst@4.1.3:
-    resolution: {integrity: sha512-CFfGsWnYC1HNFIoZWlfe8tcffmRQmFoDuMySfZF8doDEpoT0tSzO5TdMCHxmbMoBZ8/ZySpiDbp9KMvBEa2smg==}
+  sst@4.1.5:
+    resolution: {integrity: sha512-P3ZjWYFqversD79Z7PEJqcr6k/GMe9R+Idu9+MqMXOTn/DdL8wgLIVXgHJU3FwzHrGSTOKvnpABrMxhR41a02Q==}
     hasBin: true
 
   stable-hash-x@0.2.0:
@@ -8094,7 +8094,7 @@ snapshots:
 
   fraction.js@5.3.4: {}
 
-  framer-motion@12.34.3(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
+  framer-motion@12.34.4(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4):
     dependencies:
       motion-dom: 12.34.3
       motion-utils: 12.29.2
@@ -9184,44 +9184,44 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  sst-darwin-arm64@4.1.3:
+  sst-darwin-arm64@4.1.5:
     optional: true
 
-  sst-darwin-x64@4.1.3:
+  sst-darwin-x64@4.1.5:
     optional: true
 
-  sst-linux-arm64@4.1.3:
+  sst-linux-arm64@4.1.5:
     optional: true
 
-  sst-linux-x64@4.1.3:
+  sst-linux-x64@4.1.5:
     optional: true
 
-  sst-linux-x86@4.1.3:
+  sst-linux-x86@4.1.5:
     optional: true
 
-  sst-win32-arm64@4.1.3:
+  sst-win32-arm64@4.1.5:
     optional: true
 
-  sst-win32-x64@4.1.3:
+  sst-win32-x64@4.1.5:
     optional: true
 
-  sst-win32-x86@4.1.3:
+  sst-win32-x86@4.1.5:
     optional: true
 
-  sst@4.1.3:
+  sst@4.1.5:
     dependencies:
       aws4fetch: 1.0.18
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
-      sst-darwin-arm64: 4.1.3
-      sst-darwin-x64: 4.1.3
-      sst-linux-arm64: 4.1.3
-      sst-linux-x64: 4.1.3
-      sst-linux-x86: 4.1.3
-      sst-win32-arm64: 4.1.3
-      sst-win32-x64: 4.1.3
-      sst-win32-x86: 4.1.3
+      sst-darwin-arm64: 4.1.5
+      sst-darwin-x64: 4.1.5
+      sst-linux-arm64: 4.1.5
+      sst-linux-x64: 4.1.5
+      sst-linux-x86: 4.1.5
+      sst-win32-arm64: 4.1.5
+      sst-win32-x64: 4.1.5
+      sst-win32-x86: 4.1.5
 
   stable-hash-x@0.2.0: {}
 
