@@ -187,8 +187,8 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(react@19.2.4)
       remix-utils:
-        specifier: ^9.1.0
-        version: 9.1.0(@standard-schema/spec@1.1.0)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
+        specifier: ^9.2.0
+        version: 9.2.0(@standard-schema/spec@1.1.0)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4)
       sonner:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -4011,8 +4011,8 @@ packages:
     resolution: {integrity: sha512-dYqgNSZbDwkaJ2ceRd9ojCGjBq+mOm9LmtXnAnEGyHhN/5R7iDW2TRw3h+o/jCFxus3P2LfWIIiwowAjANm7IA==}
     engines: {node: '>= 0.4'}
 
-  remix-utils@9.1.0:
-    resolution: {integrity: sha512-bEVFdPyR0q/wK7QYpRMEnMewZPpO5Y+KgDg+RZo2pQy/beVlntceq90iVPgDFq+A6kUa3bKo7+Xhgy+KZNr2+Q==}
+  remix-utils@9.2.0:
+    resolution: {integrity: sha512-QFrgQQz4lSoZ3KkwN314ctIVR9XEXJlu/AWUzvo/KqqZ0FS2vij6D9Folh3QlcLuCBSmPTDDhf0cDhY8D1FcUw==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       '@edgefirst-dev/batcher': ^1.0.0
@@ -9006,7 +9006,7 @@ snapshots:
       gopd: 1.2.0
       set-function-name: 2.0.2
 
-  remix-utils@9.1.0(@standard-schema/spec@1.1.0)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4):
+  remix-utils@9.2.0(@standard-schema/spec@1.1.0)(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react@19.2.4):
     dependencies:
       type-fest: 4.41.0
     optionalDependencies:
