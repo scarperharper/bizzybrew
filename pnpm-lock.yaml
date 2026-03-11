@@ -157,8 +157,8 @@ importers:
         specifier: ^12.35.2
         version: 12.35.2(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       isbot:
-        specifier: ^5.1.35
-        version: 5.1.35
+        specifier: ^5.1.36
+        version: 5.1.36
       lucide-react:
         specifier: ^0.577.0
         version: 0.577.0(react@19.2.4)
@@ -193,8 +193,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       sst:
-        specifier: 4.2.4
-        version: 4.2.4
+        specifier: 4.2.7
+        version: 4.2.7
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -3410,8 +3410,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.1.35:
-    resolution: {integrity: sha512-waFfC72ZNfwLLuJ2iLaoVaqcNo+CAaLR7xCpAn0Y5WfGzkNHv7ZN39Vbi1y+kb+Zs46XHOX3tZNExroFUPX+Kg==}
+  isbot@5.1.36:
+    resolution: {integrity: sha512-C/ZtXyJqDPZ7G7JPr06ApWyYoHjYexQbS6hPYD4WYCzpv2Qes6Z+CCEfTX4Owzf+1EJ933PoI2p+B9v7wpGZBQ==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -4199,48 +4199,48 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@4.2.4:
-    resolution: {integrity: sha512-KxEJEqtIHv//8ajGfgJnCN0gPRoNWMeScCW59lRLt9ylSvGg/DhYwe96a3S61HtxXmi/f+2ftnVEnsxnXZpUYw==}
+  sst-darwin-arm64@4.2.7:
+    resolution: {integrity: sha512-EdQc//yBdo5ITW/wfpeX/D1J72ZPE4ztqcpwm1TWEc1Qnj/1HSwyCW11jmD9Yd4kxRXn/UiR1td3e+06uNtlTA==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@4.2.4:
-    resolution: {integrity: sha512-aY1YQI/1ntu87eq2NVpd97QHzYRrOHin0+bziHXlvtAjX0exjWrq5CtCmZ6oapTdH88fnfETG+V6gMpwy7QnZQ==}
+  sst-darwin-x64@4.2.7:
+    resolution: {integrity: sha512-mhVlaWwch+E9Z9kfdm8orU/nXwmk/0FgrZXGgTr6GPA9dQiZviEBxJTjWCQalCYmfcKpdhheJURPnaK+BVgA6g==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@4.2.4:
-    resolution: {integrity: sha512-MawSsoR7/qtnsJyDBJV+BduVpNuzBg+cjUJH1J3fPx6uxP+PYshxlQSAByGpcdmYq2qBWt/72XI/Y7eh8tWMmQ==}
+  sst-linux-arm64@4.2.7:
+    resolution: {integrity: sha512-cETF60sUi68J2OGQ5KNsGlpCUEjc43sQa4i+FYGh5lDIVpuAkX1Tf806JJQuYLNsPP/FmWw1gq82juFaFOm16w==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@4.2.4:
-    resolution: {integrity: sha512-8WunM3s2Pf76qUTezCp6JIn4e/pzzkf8G93Y2hzW++QRnjN0eRFInbzChJqlWlqSCcJpihhT+xsN4h5rbl0VUg==}
+  sst-linux-x64@4.2.7:
+    resolution: {integrity: sha512-snjEqskoNRXx2MY4vpXqxpNjMpzCRBdD8W/r+fqVXb6qPDrFbuI0S79VwFb75zzsyWUJ3lg0P84D5DDPcsglDQ==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@4.2.4:
-    resolution: {integrity: sha512-FLM7NFr7hntDt5ugTP1G66vYHHYBMaSHPkdGnEqpdy5qvTpN+VrSaIqp4jGrk0rfy6OoEInS287QBn3l0Ns2Xg==}
+  sst-linux-x86@4.2.7:
+    resolution: {integrity: sha512-DPGfi7cj4wBF6tvkRHhNvC6UFn5ZIw+dI2eVbXBGVNmrr4O8Q/vSVk7N7rh7+zV1Ldg71f5VaZdYe2dn7DpHMA==}
     cpu: [x86]
     os: [linux]
 
-  sst-win32-arm64@4.2.4:
-    resolution: {integrity: sha512-TiJxGsYnE26zpwxCEiOjkJek1R0RWMItrDcnGtGXScvLtLYXvL5N3udASPURs1h0KwOJaRkCt2zrh4choZ0eNw==}
+  sst-win32-arm64@4.2.7:
+    resolution: {integrity: sha512-RcWeggiFLjqNnnNQlM9J8TK3jTQe89/2xMPYyNcNoDy7nVGEgPHAI35+Kz1sbTWJkLYq2d24GYAoEPIHoE0ZIQ==}
     cpu: [arm64]
     os: [win32]
 
-  sst-win32-x64@4.2.4:
-    resolution: {integrity: sha512-xcH+j+nKGh8jy9T/6GpHXYK3ZvL4PXeXKRmIinSFzDPpeW6t90dJsuFiDAoajV4pFvMcoA1As33tt6VPAT+F2w==}
+  sst-win32-x64@4.2.7:
+    resolution: {integrity: sha512-qIydmnEePqDjMbECPir475JSTInBnO7vAVNROj1wD1jmiFCljr/1meelFYO6OSMWpzz3dlLUQnwKSpTsEA5Lxg==}
     cpu: [x64]
     os: [win32]
 
-  sst-win32-x86@4.2.4:
-    resolution: {integrity: sha512-P8vrOUKoU/5RkpSLjsOew3pDuwxy7tv4Cp7ZgbR8zzCJJE7OHjj5VZzMVOaHaly9XENRc7Q6/lQ4Wkhx52c6Hw==}
+  sst-win32-x86@4.2.7:
+    resolution: {integrity: sha512-TTpv1xT6UQp+cj54RRm/vEGc1Z23YAagMj2o0Nrm2gnujej71BN4tPRmKZnk3AYqv//aBuy4lrdN39ekVVa+Mw==}
     cpu: [x86]
     os: [win32]
 
-  sst@4.2.4:
-    resolution: {integrity: sha512-OR29bN0uqbh/ObEoE4ya01dTTvT6rAwrAT4Dq79bn3bSPrYh8XO6V519isw/vrKx64LMerbi5BNYXp0LEEoeaA==}
+  sst@4.2.7:
+    resolution: {integrity: sha512-shWYd4uFAVoMYnw6zsKg2/m7oRnOg1KB+FBac3Vc43fFZLCe67umTjvDaVfegMFlEg/TD8vqnsdZgp+fzXirEA==}
     hasBin: true
 
   stable-hash-x@0.2.0:
@@ -6085,7 +6085,7 @@ snapshots:
       dedent: 1.7.1(babel-plugin-macros@3.1.0)
       es-module-lexer: 1.7.0
       exit-hook: 2.2.1
-      isbot: 5.1.35
+      isbot: 5.1.36
       jsesc: 3.0.2
       lodash: 4.17.23
       p-map: 7.0.4
@@ -8424,7 +8424,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  isbot@5.1.35: {}
+  isbot@5.1.36: {}
 
   isexe@2.0.0: {}
 
@@ -9216,44 +9216,44 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  sst-darwin-arm64@4.2.4:
+  sst-darwin-arm64@4.2.7:
     optional: true
 
-  sst-darwin-x64@4.2.4:
+  sst-darwin-x64@4.2.7:
     optional: true
 
-  sst-linux-arm64@4.2.4:
+  sst-linux-arm64@4.2.7:
     optional: true
 
-  sst-linux-x64@4.2.4:
+  sst-linux-x64@4.2.7:
     optional: true
 
-  sst-linux-x86@4.2.4:
+  sst-linux-x86@4.2.7:
     optional: true
 
-  sst-win32-arm64@4.2.4:
+  sst-win32-arm64@4.2.7:
     optional: true
 
-  sst-win32-x64@4.2.4:
+  sst-win32-x64@4.2.7:
     optional: true
 
-  sst-win32-x86@4.2.4:
+  sst-win32-x86@4.2.7:
     optional: true
 
-  sst@4.2.4:
+  sst@4.2.7:
     dependencies:
       aws4fetch: 1.0.18
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
-      sst-darwin-arm64: 4.2.4
-      sst-darwin-x64: 4.2.4
-      sst-linux-arm64: 4.2.4
-      sst-linux-x64: 4.2.4
-      sst-linux-x86: 4.2.4
-      sst-win32-arm64: 4.2.4
-      sst-win32-x64: 4.2.4
-      sst-win32-x86: 4.2.4
+      sst-darwin-arm64: 4.2.7
+      sst-darwin-x64: 4.2.7
+      sst-linux-arm64: 4.2.7
+      sst-linux-x64: 4.2.7
+      sst-linux-x86: 4.2.7
+      sst-win32-arm64: 4.2.7
+      sst-win32-x64: 4.2.7
+      sst-win32-x86: 4.2.7
 
   stable-hash-x@0.2.0: {}
 
