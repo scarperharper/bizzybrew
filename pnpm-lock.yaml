@@ -119,10 +119,10 @@ importers:
         version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       '@supabase/ssr':
         specifier: ^0.9.0
-        version: 0.9.0(@supabase/supabase-js@2.99.3)
+        version: 0.9.0(@supabase/supabase-js@2.100.0)
       '@supabase/supabase-js':
         specifier: latest
-        version: 2.99.3
+        version: 2.100.0
       '@tailwindcss/postcss':
         specifier: ^4.2.2
         version: 4.2.2
@@ -193,8 +193,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       sst:
-        specifier: 4.5.1
-        version: 4.5.1
+        specifier: 4.5.5
+        version: 4.5.5
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -1909,20 +1909,23 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@supabase/auth-js@2.99.3':
-    resolution: {integrity: sha512-vMEVLA1kGGYd/kdsJSwtjiFUZM1nGfrz2DWmgMBZtocV48qL+L2+4QpIkueXyBEumMQZFEyhz57i/5zGHjvdBw==}
+  '@supabase/auth-js@2.100.0':
+    resolution: {integrity: sha512-pdT3ye3UVRN1Cg0wom6BmyY+XTtp5DiJaYnPi6j8ht5i8Lq8kfqxJMJz9GI9YDKk3w1nhGOPnh6Qz5qpyYm+1w==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/functions-js@2.99.3':
-    resolution: {integrity: sha512-6tk2zrcBkzKaaBXPOG5nshn30uJNFGOH9LxOnE8i850eQmsX+jVm7vql9kTPyvUzEHwU4zdjSOkXS9M+9ukMVA==}
+  '@supabase/functions-js@2.100.0':
+    resolution: {integrity: sha512-keLg79RPwP+uiwHuxFPTFgDRxPV46LM4j/swjyR2GKJgWniTVSsgiBHfbIBDcrQwehLepy09b/9QSHUywtKRWQ==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/postgrest-js@2.99.3':
-    resolution: {integrity: sha512-8HxEf+zNycj7Z8+ONhhlu+7J7Ha+L6weyCtdEeK2mN5OWJbh6n4LPU4iuJ5UlCvvNnbSXMoutY7piITEEAgl2g==}
+  '@supabase/phoenix@0.4.0':
+    resolution: {integrity: sha512-RHSx8bHS02xwfHdAbX5Lpbo6PXbgyf7lTaXTlwtFDPwOIw64NnVRwFAXGojHhjtVYI+PEPNSWwkL90f4agN3bw==}
+
+  '@supabase/postgrest-js@2.100.0':
+    resolution: {integrity: sha512-xYNvNbBJaXOGcrZ44wxwp5830uo1okMHGS8h8dm3u4f0xcZ39yzbryUsubTJW41MG2gbL/6U57cA4Pi6YMZ9pA==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/realtime-js@2.99.3':
-    resolution: {integrity: sha512-c1azgZ2nZPczbY5k5u5iFrk1InpxN81IvNE+UBAkjrBz3yc5ALLJNkeTQwbJZT4PZBuYXEzqYGLMuh9fdTtTMg==}
+  '@supabase/realtime-js@2.100.0':
+    resolution: {integrity: sha512-2AZs00zzEF0HuCKY8grz5eCYlwEfVi5HONLZFoNR6aDfxQivl8zdQYNjyFoqN2MZiVhQHD7u6XV/xHwM8mCEHw==}
     engines: {node: '>=20.0.0'}
 
   '@supabase/ssr@0.9.0':
@@ -1930,12 +1933,12 @@ packages:
     peerDependencies:
       '@supabase/supabase-js': ^2.97.0
 
-  '@supabase/storage-js@2.99.3':
-    resolution: {integrity: sha512-lOfIm4hInNcd8x0i1LWphnLKxec42wwbjs+vhaVAvR801Vda0UAMbTooUY6gfqgQb8v29GofqKuQMMTAsl6w/w==}
+  '@supabase/storage-js@2.100.0':
+    resolution: {integrity: sha512-d4EeuK6RNIgYNA2MU9kj8lQrLm5AzZ+WwpWjGkii6SADQNIGTC/uiaTRu02XJ5AmFALQfo8fLl9xuCkO6Xw+iQ==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/supabase-js@2.99.3':
-    resolution: {integrity: sha512-GuPbzoEaI51AkLw9VGhLNvnzw4PHbS3p8j2/JlvLeZNQMKwZw4aEYQIDBRtFwL5Nv7/275n9m4DHtakY8nCvgg==}
+  '@supabase/supabase-js@2.100.0':
+    resolution: {integrity: sha512-r0tlcukejJXJ1m/2eG/Ya5eYs4W8AC7oZfShpG3+SIo/eIU9uIt76ZeYI1SoUwUmcmzlAbgch+HDZDR/toVQPQ==}
     engines: {node: '>=20.0.0'}
 
   '@swc/helpers@0.5.18':
@@ -2112,9 +2115,6 @@ packages:
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
-
-  '@types/phoenix@1.6.7':
-    resolution: {integrity: sha512-oN9ive//QSBkf19rfDv45M7eZPi0eEXylht2OLEXicu5b4KoQ1OzXIw+xDSGWxSxe1JmepRR/ZH283vsu518/Q==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -4341,48 +4341,48 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@4.5.1:
-    resolution: {integrity: sha512-ViLqLzugjmd2WEJ/mxSVb40w58vWWdEeUwRg7DYCy1F+G7IBfsduLW/QCYVNVV74egfNOWTS6zRVXX18Fsmn3A==}
+  sst-darwin-arm64@4.5.5:
+    resolution: {integrity: sha512-DrFveOir8IlzyEnDGIUuXEvt0o2Toa+Fqk2ZxpM8FPShIEyvRQZTx+eTOdP6hKBKHJ0egdFctnSRR1ejFj1Tmg==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@4.5.1:
-    resolution: {integrity: sha512-VJvpylbQRfZ1IrJvQKjVurZTi1L7E7zoc5FY+iv8/2jO+rdxKLlZMshSj7sFeS7ZnAbMlO37e4LiTRQ9Pcs2Dw==}
+  sst-darwin-x64@4.5.5:
+    resolution: {integrity: sha512-yVehtCxftD+cSOLSv4WnIYGz8whTpnjF5y8dPnbbK1SxXJiOC2r6Obfpw6MV9L1EshPetC8dEwGBFQX8EjVkvw==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@4.5.1:
-    resolution: {integrity: sha512-ZscGWwt/L3UBcpd0xZ0rt/ceJEVxiYgtIzA/XJS2FMRA1Yw+6m87tTIYNEXfOip/hM9u9Ay6vaGp7N160yy5nw==}
+  sst-linux-arm64@4.5.5:
+    resolution: {integrity: sha512-mXP8lK5FRrPl5zKpo/N0z878cRQvpGnP54U3nVRiSuFbukHdAPvZF4OVd21p4m5wf7xm1UGdralMKeAPnqL6xA==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@4.5.1:
-    resolution: {integrity: sha512-AJVV+XboqLpfEL8oTHi0VmtlfPldo66zC8YNfDQNLWAtqzuZ6QBHKGuSfP7D1vXbGsQrSzEoRD80/5S4a/CwZw==}
+  sst-linux-x64@4.5.5:
+    resolution: {integrity: sha512-l/JJKJ9EXD/Emy3lkbe32bT4wkyMaMk75PFKVizIDKZWQ/ZWZrqQo6T59OqW/M1V58LPM+izFkPgqF1R+H6DnA==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@4.5.1:
-    resolution: {integrity: sha512-tlufp3W0MBYXOA4N7i7Oe1oCyoGtKn3cA384s32zZP6+t90cpoWsDdQTyOGIVJlnTFaM6bXK5rbDVUVNBWMGNQ==}
+  sst-linux-x86@4.5.5:
+    resolution: {integrity: sha512-Gzjhth2UgyB5EYkK2ZzQ3nfEAbrlLdER+5XCf/cVHQE4RqawdLsLb/ocQ+lK5XqWxPd1rsXewIj/K+L1kjoZEg==}
     cpu: [x86]
     os: [linux]
 
-  sst-win32-arm64@4.5.1:
-    resolution: {integrity: sha512-j3L5/HMiTdeiSBWWgo4eV2IExgsZpql+4l3IGPKEV46gYBwGrgi7Azm118IUTk5nK58jIIA5pRXCBn8oqEfEwQ==}
+  sst-win32-arm64@4.5.5:
+    resolution: {integrity: sha512-Wf8ZutK54MuynkfmNjb8zWapdMUvSVnYlTiKw5z8HkdoA3iTUizKRErAbTUZ/nEN4WdeQaidzPQ+7FuuoyY2hA==}
     cpu: [arm64]
     os: [win32]
 
-  sst-win32-x64@4.5.1:
-    resolution: {integrity: sha512-knzqsXGb4jYPopOwDn7Uf2QbizdiCB9C4/oOZLyEYNq4qpYAGoSXfYgN3aVjJ4kdhPOtNfBmasf65SwEF5h5jA==}
+  sst-win32-x64@4.5.5:
+    resolution: {integrity: sha512-8OFkTPRkj2wUyOB3UZOfQzSZCwQFzoczG5kiMdz1birR1HRj/kQJWGSsvJhIE1uY6r66MMlLm4hlRX+IO5TTFg==}
     cpu: [x64]
     os: [win32]
 
-  sst-win32-x86@4.5.1:
-    resolution: {integrity: sha512-0FNix7w67d/6ft7Yg+/iykp6ggTVee+YhzSwOp/HWTuzgnQ3wfJJaENL0qVzuEJNtbZ6De2RgZi3o6Gx0icwUg==}
+  sst-win32-x86@4.5.5:
+    resolution: {integrity: sha512-JPQ9h7Y+oKg0ypI0EYSYQxYBVFK9htG0jT61c8tGx805NJqq/4KD8RpJeReE7/17nJ2wND4BgtthOpmijBnXWg==}
     cpu: [x86]
     os: [win32]
 
-  sst@4.5.1:
-    resolution: {integrity: sha512-sKTe4lluXbP41o3rSM+S1RV8vZKzK81L8+WoO55EAz7xNpzflJ2/ZQcvCXEvU5JpU89ireAtC9inrqeBEAd1bA==}
+  sst@4.5.5:
+    resolution: {integrity: sha512-SAs6EMf5GNyBI4ULsbkCKSo2Y7UuZ96yLSzobtXXYmWiallv7dVL6/JoBAhmKt8mcZwxCJTo17XqdfWXNoYlPQ==}
     hasBin: true
 
   stable-hash-x@0.2.0:
@@ -4769,8 +4769,8 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  ws@8.19.0:
-    resolution: {integrity: sha512-blAT2mjOEIi0ZzruJfIhb3nps74PRWTCz1IjglWEEpQl5XS/UNama6u2/rjFkDDouqr4L67ry+1aGIALViWjDg==}
+  ws@8.20.0:
+    resolution: {integrity: sha512-sAt8BhgNbzCtgGbt2OxmpuryO63ZoDk/sqaB/znQm94T4fCEsy/yV+7CdC1kJhOU9lboAEU7R3kquuycDoibVA==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -6478,45 +6478,47 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@supabase/auth-js@2.99.3':
+  '@supabase/auth-js@2.100.0':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/functions-js@2.99.3':
+  '@supabase/functions-js@2.100.0':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/postgrest-js@2.99.3':
+  '@supabase/phoenix@0.4.0': {}
+
+  '@supabase/postgrest-js@2.100.0':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/realtime-js@2.99.3':
+  '@supabase/realtime-js@2.100.0':
     dependencies:
-      '@types/phoenix': 1.6.7
+      '@supabase/phoenix': 0.4.0
       '@types/ws': 8.18.1
       tslib: 2.8.1
-      ws: 8.19.0
+      ws: 8.20.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
 
-  '@supabase/ssr@0.9.0(@supabase/supabase-js@2.99.3)':
+  '@supabase/ssr@0.9.0(@supabase/supabase-js@2.100.0)':
     dependencies:
-      '@supabase/supabase-js': 2.99.3
+      '@supabase/supabase-js': 2.100.0
       cookie: 1.1.1
 
-  '@supabase/storage-js@2.99.3':
+  '@supabase/storage-js@2.100.0':
     dependencies:
       iceberg-js: 0.8.1
       tslib: 2.8.1
 
-  '@supabase/supabase-js@2.99.3':
+  '@supabase/supabase-js@2.100.0':
     dependencies:
-      '@supabase/auth-js': 2.99.3
-      '@supabase/functions-js': 2.99.3
-      '@supabase/postgrest-js': 2.99.3
-      '@supabase/realtime-js': 2.99.3
-      '@supabase/storage-js': 2.99.3
+      '@supabase/auth-js': 2.100.0
+      '@supabase/functions-js': 2.100.0
+      '@supabase/postgrest-js': 2.100.0
+      '@supabase/realtime-js': 2.100.0
+      '@supabase/storage-js': 2.100.0
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -6675,8 +6677,6 @@ snapshots:
       undici-types: 7.18.2
 
   '@types/parse-json@4.0.2': {}
-
-  '@types/phoenix@1.6.7': {}
 
   '@types/react-dom@19.2.3(@types/react@19.2.14)':
     dependencies:
@@ -9478,44 +9478,44 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  sst-darwin-arm64@4.5.1:
+  sst-darwin-arm64@4.5.5:
     optional: true
 
-  sst-darwin-x64@4.5.1:
+  sst-darwin-x64@4.5.5:
     optional: true
 
-  sst-linux-arm64@4.5.1:
+  sst-linux-arm64@4.5.5:
     optional: true
 
-  sst-linux-x64@4.5.1:
+  sst-linux-x64@4.5.5:
     optional: true
 
-  sst-linux-x86@4.5.1:
+  sst-linux-x86@4.5.5:
     optional: true
 
-  sst-win32-arm64@4.5.1:
+  sst-win32-arm64@4.5.5:
     optional: true
 
-  sst-win32-x64@4.5.1:
+  sst-win32-x64@4.5.5:
     optional: true
 
-  sst-win32-x86@4.5.1:
+  sst-win32-x86@4.5.5:
     optional: true
 
-  sst@4.5.1:
+  sst@4.5.5:
     dependencies:
       aws4fetch: 1.0.18
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
-      sst-darwin-arm64: 4.5.1
-      sst-darwin-x64: 4.5.1
-      sst-linux-arm64: 4.5.1
-      sst-linux-x64: 4.5.1
-      sst-linux-x86: 4.5.1
-      sst-win32-arm64: 4.5.1
-      sst-win32-x64: 4.5.1
-      sst-win32-x86: 4.5.1
+      sst-darwin-arm64: 4.5.5
+      sst-darwin-x64: 4.5.5
+      sst-linux-arm64: 4.5.5
+      sst-linux-x64: 4.5.5
+      sst-linux-x86: 4.5.5
+      sst-win32-arm64: 4.5.5
+      sst-win32-x64: 4.5.5
+      sst-win32-x86: 4.5.5
 
   stable-hash-x@0.2.0: {}
 
@@ -9928,7 +9928,7 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  ws@8.19.0: {}
+  ws@8.20.0: {}
 
   yallist@3.1.1: {}
 
