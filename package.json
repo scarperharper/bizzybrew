@@ -44,7 +44,7 @@
 		"@react-router/fs-routes": "^7.13.0",
 		"@react-router/node": "7.13.0",
 		"@react-router/serve": "7.13.0",
-		"@supabase/ssr": "^0.9.0",
+		"@supabase/ssr": "^0.10.0",
 		"@supabase/supabase-js": "latest",
 		"@tailwindcss/postcss": "^4.2.2",
 		"@tanstack/react-table": "^8.21.3",
