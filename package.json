@@ -11,7 +11,7 @@
 	"dependencies": {
 		"@chakra-ui/react": "^3.34.0",
 		"@conform-to/react": "^1.17.1",
-		"@conform-to/zod": "^1.17.1",
+		"@conform-to/zod": "^1.18.0",
 		"@heroicons/react": "^2.2.0",
 		"@radix-ui/react-accordion": "^1.2.12",
 		"@radix-ui/react-alert-dialog": "^1.1.15",
@@ -81,7 +81,7 @@
 	},
 	"devDependencies": {
 		"@react-router/dev": "7.13.0",
-		"@types/node": "^25.5.0",
+		"@types/node": "^25.5.2",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -93,7 +93,7 @@
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-hooks": "^7.0.1",
-		"knip": "^6.2.0",
+		"knip": "^6.3.0",
 		"postcss": "^8.5.8",
 		"tailwindcss": "^4.2.2",
 		"typescript": "^5.9.3",
