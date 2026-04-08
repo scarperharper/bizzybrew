@@ -119,10 +119,10 @@ importers:
         version: 7.13.0(react-router@7.13.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(typescript@5.9.3)
       '@supabase/ssr':
         specifier: ^0.10.0
-        version: 0.10.0(@supabase/supabase-js@2.101.1)
+        version: 0.10.0(@supabase/supabase-js@2.102.1)
       '@supabase/supabase-js':
         specifier: latest
-        version: 2.101.1
+        version: 2.102.1
       '@tailwindcss/postcss':
         specifier: ^4.2.2
         version: 4.2.2
@@ -134,7 +134,7 @@ importers:
         version: 3.18.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       autoprefixer:
         specifier: 10.4.27
-        version: 10.4.27(postcss@8.5.8)
+        version: 10.4.27(postcss@8.5.9)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -260,8 +260,8 @@ importers:
         specifier: ^6.3.0
         version: 6.3.0(@emnapi/core@1.9.1)(@emnapi/runtime@1.9.1)
       postcss:
-        specifier: ^8.5.8
-        version: 8.5.8
+        specifier: ^8.5.9
+        version: 8.5.9
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1913,23 +1913,23 @@ packages:
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
 
-  '@supabase/auth-js@2.101.1':
-    resolution: {integrity: sha512-Kd0Wey+RkFHgyVep7adS6UOE2pN6MJ3mZ32PAXSvfw6IjUkFRC7IQpdZZjUOcUe5pXr1ejufCRgF6lsGINe4Tw==}
+  '@supabase/auth-js@2.102.1':
+    resolution: {integrity: sha512-2uH2WB0H98TOGDtaFWhxIcR42Dro/VB7VDZanz/4bVJsqioIue1m3TUqu3xciDm2W9r+1LXQvYNsYbQfWmD+uQ==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/functions-js@2.101.1':
-    resolution: {integrity: sha512-OZWU7YtaG+NNNFZK8p/FuJ6gpq7pFyrG2fLOopP73HAIDHDGpOttPJapvO8ADu3RkqfQfkwrB354vPkSBbZ20A==}
+  '@supabase/functions-js@2.102.1':
+    resolution: {integrity: sha512-UcrcKTPnAIo+Yp9Jjq9XXwFbsmgRYY637mwka9ZjmTIWcX/xr1pote4OVvaGQycVY1KTiQgjMvpC0Q0yJhRq3w==}
     engines: {node: '>=20.0.0'}
 
   '@supabase/phoenix@0.4.0':
     resolution: {integrity: sha512-RHSx8bHS02xwfHdAbX5Lpbo6PXbgyf7lTaXTlwtFDPwOIw64NnVRwFAXGojHhjtVYI+PEPNSWwkL90f4agN3bw==}
 
-  '@supabase/postgrest-js@2.101.1':
-    resolution: {integrity: sha512-UW1RajH5jbZoK+ldAJ1I6VZ+HWwZ2oaKjEQ6Gn+AQ67CHQVxGl8wNQoLYyumbyaExm41I+wn7arulcY1eHeZJw==}
+  '@supabase/postgrest-js@2.102.1':
+    resolution: {integrity: sha512-InLvXKAYf8BIqiv9jWOYudWB3rU8A9uMbcip5BQ5sLLNPrbO1Ekkr79OvlhZBgMNSppxVyC7wPPGzLxMcTZhlA==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/realtime-js@2.101.1':
-    resolution: {integrity: sha512-Oa6dno0OB9I+hv5do5zsZHbFu41ViZnE9IWjmkeeF/8fPmB5fWoHGqeTYEC3/0DAgtpUoFJa4FpvzFH0SBHo1Q==}
+  '@supabase/realtime-js@2.102.1':
+    resolution: {integrity: sha512-h2fCumib/v6u7XMwSPgxnpfimjX4xCEayUHrxWLC7UurfQjUZJ0pmJDgm6yj80DnUerxuulRghwm5zXYysFG/Q==}
     engines: {node: '>=20.0.0'}
 
   '@supabase/ssr@0.10.0':
@@ -1937,12 +1937,12 @@ packages:
     peerDependencies:
       '@supabase/supabase-js': ^2.100.1
 
-  '@supabase/storage-js@2.101.1':
-    resolution: {integrity: sha512-WhTaUOBgeEvnKLy95Cdlp6+D5igSF/65yC727w1olxbet5nzUvMlajKUWyzNtQu2efrz2cQ7FcdVBdQqgT9YKQ==}
+  '@supabase/storage-js@2.102.1':
+    resolution: {integrity: sha512-eCL9T4Xpe40nmKlkUJ7Zq/hk34db1xPiT0WL3Iv5MbJqHuCAe5TxhV8Rjqd6DNZrzjtfYObZtYl9jKJaHrivqw==}
     engines: {node: '>=20.0.0'}
 
-  '@supabase/supabase-js@2.101.1':
-    resolution: {integrity: sha512-Jnhm3LfuACwjIzvk2pfUbGQn7pa7hi6MFzfSyPrRYWVCCu69RPLCFyHSBl7HSBwadbQ3UZOznnD3gPca3ePrRA==}
+  '@supabase/supabase-js@2.102.1':
+    resolution: {integrity: sha512-bChxPVeLDnYN9M2d/u4fXsvylwSQG5grAl+HN8f+ZD9a9PuVU+Ru+xGmEsk+b9Iz3rJC9ZQnQUJYQ28fApdWYA==}
     engines: {node: '>=20.0.0'}
 
   '@swc/helpers@0.5.18':
@@ -3994,8 +3994,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.8:
-    resolution: {integrity: sha512-OW/rX8O/jXnm82Ey1k44pObPtdblfiuWnrd8X7GJ7emImCOstunGbXUpp7HdBrFQX6rJzn3sPT397Wp5aCwCHg==}
+  postcss@8.5.9:
+    resolution: {integrity: sha512-7a70Nsot+EMX9fFU3064K/kdHWZqGVY+BADLyXc8Dfv+mTLLVl6JzJpPaCZ2kQL9gIJvKXSLMHhqdRRjwQeFtw==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -6493,21 +6493,21 @@ snapshots:
 
   '@standard-schema/spec@1.1.0': {}
 
-  '@supabase/auth-js@2.101.1':
+  '@supabase/auth-js@2.102.1':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/functions-js@2.101.1':
+  '@supabase/functions-js@2.102.1':
     dependencies:
       tslib: 2.8.1
 
   '@supabase/phoenix@0.4.0': {}
 
-  '@supabase/postgrest-js@2.101.1':
+  '@supabase/postgrest-js@2.102.1':
     dependencies:
       tslib: 2.8.1
 
-  '@supabase/realtime-js@2.101.1':
+  '@supabase/realtime-js@2.102.1':
     dependencies:
       '@supabase/phoenix': 0.4.0
       '@types/ws': 8.18.1
@@ -6517,23 +6517,23 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  '@supabase/ssr@0.10.0(@supabase/supabase-js@2.101.1)':
+  '@supabase/ssr@0.10.0(@supabase/supabase-js@2.102.1)':
     dependencies:
-      '@supabase/supabase-js': 2.101.1
+      '@supabase/supabase-js': 2.102.1
       cookie: 1.1.1
 
-  '@supabase/storage-js@2.101.1':
+  '@supabase/storage-js@2.102.1':
     dependencies:
       iceberg-js: 0.8.1
       tslib: 2.8.1
 
-  '@supabase/supabase-js@2.101.1':
+  '@supabase/supabase-js@2.102.1':
     dependencies:
-      '@supabase/auth-js': 2.101.1
-      '@supabase/functions-js': 2.101.1
-      '@supabase/postgrest-js': 2.101.1
-      '@supabase/realtime-js': 2.101.1
-      '@supabase/storage-js': 2.101.1
+      '@supabase/auth-js': 2.102.1
+      '@supabase/functions-js': 2.102.1
+      '@supabase/postgrest-js': 2.102.1
+      '@supabase/realtime-js': 2.102.1
+      '@supabase/storage-js': 2.102.1
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -6614,7 +6614,7 @@ snapshots:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.2.2
       '@tailwindcss/oxide': 4.2.2
-      postcss: 8.5.8
+      postcss: 8.5.9
       tailwindcss: 4.2.2
 
   '@tanstack/react-table@8.21.3(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
@@ -7562,13 +7562,13 @@ snapshots:
 
   async-function@1.0.0: {}
 
-  autoprefixer@10.4.27(postcss@8.5.8):
+  autoprefixer@10.4.27(postcss@8.5.9):
     dependencies:
       browserslist: 4.28.1
       caniuse-lite: 1.0.30001774
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.8
+      postcss: 8.5.9
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -9123,7 +9123,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.8:
+  postcss@8.5.9:
     dependencies:
       nanoid: 3.3.11
       picocolors: 1.1.1
@@ -9865,7 +9865,7 @@ snapshots:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
-      postcss: 8.5.8
+      postcss: 8.5.9
       rollup: 4.59.0
       tinyglobby: 0.2.15
     optionalDependencies:
