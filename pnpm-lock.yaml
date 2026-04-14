@@ -19,8 +19,8 @@ importers:
         specifier: ^1.18.0
         version: 1.18.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@conform-to/zod':
-        specifier: ^1.18.0
-        version: 1.18.0(zod@4.3.6)
+        specifier: ^1.19.0
+        version: 1.19.0(zod@4.3.6)
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.5)
@@ -157,8 +157,8 @@ importers:
         specifier: ^12.38.0
         version: 12.38.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       isbot:
-        specifier: ^5.1.37
-        version: 5.1.37
+        specifier: ^5.1.38
+        version: 5.1.38
       lucide-react:
         specifier: ^1.8.0
         version: 1.8.0(react@19.2.5)
@@ -552,14 +552,17 @@ packages:
   '@conform-to/dom@1.18.0':
     resolution: {integrity: sha512-luccJjJJgvePp8mmU1plwEcofP0Gk/7a54ukSX1ta7K6J0Ep37nm18WK7gowrVCIHzCnR7iAdyjd+vGTpuI4zw==}
 
+  '@conform-to/dom@1.19.0':
+    resolution: {integrity: sha512-2qegTdMy3ZT+SzzD8YyUWupAEhLl3X248bhrbhXdRsWjFdGSnTz12YB9j/f1MZ27A1LnmijKYiz2mgMdlblPAA==}
+
   '@conform-to/react@1.18.0':
     resolution: {integrity: sha512-k5CnPa/a6YOv1+cavx5DiW4yh9RxC148Xxir5p3dqJ6r20WD9MvhVDOSJ/qmIegkYoLKQhxnOw3RJoNFfEDKPw==}
     peerDependencies:
       react: '>=18'
       react-dom: '>=18'
 
-  '@conform-to/zod@1.18.0':
-    resolution: {integrity: sha512-ombphsARN/7QpjOOsk7QPHDvCK1dLr4PlTz6styUQoh9vt8FxTOuH64XdY0XGtwUCTSJ5/9lvBa75cyhDbYm1Q==}
+  '@conform-to/zod@1.19.0':
+    resolution: {integrity: sha512-kqwuubmJPcyDlf3gXLWjKsWhTiox4ICL/eXLFZONjnEAOHGP1sUvfhvuYwJpH0PJu82kgz9JZG5iuVOcZGsygw==}
     peerDependencies:
       zod: ^3.21.0 || ^4.0.0
 
@@ -3878,8 +3881,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.1.37:
-    resolution: {integrity: sha512-5bcicX81xf6NlTEV8rWdg7Pk01LFizDetuYGHx6d/f6y3lR2/oo8IfxjzJqn1UdDEyCcwT9e7NRloj8DwCYujQ==}
+  isbot@5.1.38:
+    resolution: {integrity: sha512-Cus2702JamTNMEY4zTP+TShgq/3qzjvGcBC4XMOV45BLaxD4iUFENkqu7ZhFeSzwNsCSZLjnGlihDQznnpnEEA==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -5787,15 +5790,17 @@ snapshots:
 
   '@conform-to/dom@1.18.0': {}
 
+  '@conform-to/dom@1.19.0': {}
+
   '@conform-to/react@1.18.0(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
       '@conform-to/dom': 1.18.0
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
 
-  '@conform-to/zod@1.18.0(zod@4.3.6)':
+  '@conform-to/zod@1.19.0(zod@4.3.6)':
     dependencies:
-      '@conform-to/dom': 1.18.0
+      '@conform-to/dom': 1.19.0
       zod: 4.3.6
 
   '@date-fns/tz@1.4.1': {}
@@ -7017,7 +7022,7 @@ snapshots:
       dedent: 1.7.1(babel-plugin-macros@3.1.0)
       es-module-lexer: 1.7.0
       exit-hook: 2.2.1
-      isbot: 5.1.37
+      isbot: 5.1.38
       jsesc: 3.0.2
       lodash: 4.17.23
       p-map: 7.0.4
@@ -9685,7 +9690,7 @@ snapshots:
 
   isarray@2.0.5: {}
 
-  isbot@5.1.37: {}
+  isbot@5.1.38: {}
 
   isexe@2.0.0: {}
 
