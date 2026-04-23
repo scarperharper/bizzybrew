@@ -9,7 +9,7 @@
 		"typecheck": "react-router typegen && tsc"
 	},
 	"dependencies": {
-		"@chakra-ui/react": "^3.34.0",
+		"@chakra-ui/react": "^3.35.0",
 		"@conform-to/react": "^1.19.0",
 		"@conform-to/zod": "^1.19.0",
 		"@heroicons/react": "^2.2.0",
@@ -93,7 +93,7 @@
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-hooks": "^7.1.1",
-		"knip": "^6.6.0",
+		"knip": "^6.6.1",
 		"postcss": "^8.5.10",
 		"tailwindcss": "^4.2.4",
 		"typescript": "^5.9.3",
