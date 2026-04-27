@@ -134,7 +134,7 @@ importers:
         version: 3.18.7(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       autoprefixer:
         specifier: 10.5.0
-        version: 10.5.0(postcss@8.5.10)
+        version: 10.5.0(postcss@8.5.12)
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -193,8 +193,8 @@ importers:
         specifier: ^2.0.7
         version: 2.0.7(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       sst:
-        specifier: 4.11.0
-        version: 4.11.0
+        specifier: 4.12.2
+        version: 4.12.2
       tailwind-merge:
         specifier: ^3.5.0
         version: 3.5.0
@@ -260,8 +260,8 @@ importers:
         specifier: ^6.6.2
         version: 6.6.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)
       postcss:
-        specifier: ^8.5.10
-        version: 8.5.10
+        specifier: ^8.5.12
+        version: 8.5.12
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -301,8 +301,8 @@ packages:
   '@aws-crypto/util@5.2.0':
     resolution: {integrity: sha512-4RkU9EsI6ZpBve5fseQlGNUWKMa1RLPQ1dnjnQoe07ldfIzcsGb5hC5W0Dm7u423KWzawlrpbjXBrXCEv9zazQ==}
 
-  '@aws-sdk/client-lambda@3.1036.0':
-    resolution: {integrity: sha512-1JwkI5NXsYrwyEhtBWb441c87DJAn+JFa1/7i1xtizuWX1ibEq9jQBGiz+eQfUZNkVMRnpIGiGDOETJobj+i9w==}
+  '@aws-sdk/client-lambda@3.1037.0':
+    resolution: {integrity: sha512-QGlFTYge89OcrCJXO2fMkqbYrASOd5Ut3V58EYcuajGONIKOxxP6UYwrZE5vDMebNJi2mPLesDKaM7aH7oqcrA==}
     engines: {node: '>=20.0.0'}
 
   '@aws-sdk/core@3.974.5':
@@ -4343,8 +4343,8 @@ packages:
   postcss-value-parser@4.2.0:
     resolution: {integrity: sha512-1NNCs6uurfkVbeXG4S8JFT9t19m45ICnif8zWLd5oPSZ50QnwMfK+H3jv408d4jw/7Bttv5axS5IiHoLaVNHeQ==}
 
-  postcss@8.5.10:
-    resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
+  postcss@8.5.12:
+    resolution: {integrity: sha512-W62t/Se6rA0Az3DfCL0AqJwXuKwBeYg6nOaIgzP+xZ7N5BFCI7DYi1qs6ygUYT6rvfi6t9k65UMLJC+PHZpDAA==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -4703,48 +4703,48 @@ packages:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
 
-  sst-darwin-arm64@4.11.0:
-    resolution: {integrity: sha512-08hBtTZFMoUzIb4PnuPNeXWNP3eyBoCqwZcmmBfNRdBCnDKv4HIeDrdAc1mdJPhHkgtBlX1SGqS3k06CDDAlTg==}
+  sst-darwin-arm64@4.12.2:
+    resolution: {integrity: sha512-aC78EsxrXByYJ4MQ2EzHkt1CzZrEkRBBosM1cjjdVYhZMWc0izwk6qFBZ3cXFL0YgdoEf0HKpE6yXyGX/ArT6g==}
     cpu: [arm64]
     os: [darwin]
 
-  sst-darwin-x64@4.11.0:
-    resolution: {integrity: sha512-X9cr4zoQjLBpJe9P0Ns5xDS3t4779ymcduuIKpcZchq2eFbV4h19c428+AxH33dcC+6qYW8r0nEUN3p75Wefow==}
+  sst-darwin-x64@4.12.2:
+    resolution: {integrity: sha512-ecOx6k/o0o8E3EOBBX9m7N1Y4rm/q+H90oa0vSq4xrY0T2yTYSMFOZsVzQZaiFl0CtmGfNMfekz9iJYVZRXoQQ==}
     cpu: [x64]
     os: [darwin]
 
-  sst-linux-arm64@4.11.0:
-    resolution: {integrity: sha512-SRBDKp4lYzigpk3UWoRYcnpdOXhSlMX6w7AOuD7bw+6R7JqoQqWHAJkDC2ZqNMoX8yW/yH0pwu87NEJL5MlB6g==}
+  sst-linux-arm64@4.12.2:
+    resolution: {integrity: sha512-T2/6gNChb6wOilReltMYKH7n9+gcHzPuIbBXM84+B5QBgq2YAlVmllNtbPpg5xo4elGtx120X93hIB4Y/6nd/g==}
     cpu: [arm64]
     os: [linux]
 
-  sst-linux-x64@4.11.0:
-    resolution: {integrity: sha512-Ijdk6Kx9CdfFpXs7iDUD/Ouu9vB4s/vc/kZsl8SIEc1qzNyee5p7aco11qcyZOGEQnsOwSlT5eYvbgF4x/H17A==}
+  sst-linux-x64@4.12.2:
+    resolution: {integrity: sha512-/Ok3/LdY/rsHJtecX7XYWUdjrozdhuk9bTr2I4rHQoKr51surwUEhR951DwsgDNab84OTfixupSwX6qxnXxbmw==}
     cpu: [x64]
     os: [linux]
 
-  sst-linux-x86@4.11.0:
-    resolution: {integrity: sha512-nVb16a32o88iDZFp61vCwJ7ITymkMbNIjq42yyQ/OKJ97nZVxeP5a0mO/cq51ErAySlpyka9Pbq802YL0/YeOA==}
+  sst-linux-x86@4.12.2:
+    resolution: {integrity: sha512-arGRmYokeoWvqZ/DqoqROwncc/RoyDJRYGpPIm7iDm3MQB3QORjs0zEK42ab6kqiEFJ02yv6WEW9XHjoB7EtOw==}
     cpu: [x86]
     os: [linux]
 
-  sst-win32-arm64@4.11.0:
-    resolution: {integrity: sha512-lUsxKtZjAfCe3pgjhdVxASNnF28XS81y80ewQTgdJvRPEx7ZGo/+qdxAT3v970GHWd7I6yxQWHIkNX+3yz7wJQ==}
+  sst-win32-arm64@4.12.2:
+    resolution: {integrity: sha512-9dEe2vn82u/NzDMSfkEvYpB40LvS7YLrSRx66Q44/cFp/1sWHdBLCAQAhk9FX8A22hXqGW70s0R9rLVtoBBzeg==}
     cpu: [arm64]
     os: [win32]
 
-  sst-win32-x64@4.11.0:
-    resolution: {integrity: sha512-E6xfRufOIq8pHsNf+Icg3EKaT9us+u2EdDKEFaNlHghVt/n6myZG16a3oSptoWTxfty/HCkdmOwbEIFFVPeLcg==}
+  sst-win32-x64@4.12.2:
+    resolution: {integrity: sha512-tR7+//CTtUax/SKOsnX4gYr2YFLoC3xLUiW+s9/fomYSNQzSelOJhGOX8J1xCm7oEQ6o12Yul7GiJiUDKfK8Fg==}
     cpu: [x64]
     os: [win32]
 
-  sst-win32-x86@4.11.0:
-    resolution: {integrity: sha512-QRgnJ2x9zpjSnMKFM3PMeZ7++dgi4iffpSSpe9+EBBpSkHPlM1+oMvVIHAyk8Lu+YCUH06UtJhKe6MjuWiI92g==}
+  sst-win32-x86@4.12.2:
+    resolution: {integrity: sha512-rZyp7fx26vtdrJV9OaWmkx6LZT75CeUmZS4F/CiX+jUlK3v9tuNLepRnT7KjSsqgtCCWyIurkHWAakAnAepZ6w==}
     cpu: [x86]
     os: [win32]
 
-  sst@4.11.0:
-    resolution: {integrity: sha512-/ckPOl3ZU0c+mNhlt3n5RybJ2vzE3N1b2W2VgDoM4ersLISI7JLZyzJphmx03sjnGB7ASHw6IHCJLccmIuEa+A==}
+  sst@4.12.2:
+    resolution: {integrity: sha512-PQdsdND15hF2Pl4Ua74HP1LkFdcq6jb1Sse2MxpdGpAuU2M+1WVDR0QOpIxfl0mf31PKGIord/faoSZG+p/UCg==}
     hasBin: true
 
   stable-hash-x@0.2.0:
@@ -5295,7 +5295,7 @@ snapshots:
       '@smithy/util-utf8': 2.3.0
       tslib: 2.8.1
 
-  '@aws-sdk/client-lambda@3.1036.0':
+  '@aws-sdk/client-lambda@3.1037.0':
     dependencies:
       '@aws-crypto/sha256-browser': 5.2.0
       '@aws-crypto/sha256-js': 5.2.0
@@ -5632,7 +5632,7 @@ snapshots:
 
   '@aws/durable-execution-sdk-js@1.0.2':
     dependencies:
-      '@aws-sdk/client-lambda': 3.1036.0
+      '@aws-sdk/client-lambda': 3.1037.0
     transitivePeerDependencies:
       - aws-crt
 
@@ -7670,7 +7670,7 @@ snapshots:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.2.4
       '@tailwindcss/oxide': 4.2.4
-      postcss: 8.5.10
+      postcss: 8.5.12
       tailwindcss: 4.2.4
 
   '@tanstack/react-table@8.21.3(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
@@ -8629,13 +8629,13 @@ snapshots:
 
   async-function@1.0.0: {}
 
-  autoprefixer@10.5.0(postcss@8.5.10):
+  autoprefixer@10.5.0(postcss@8.5.12):
     dependencies:
       browserslist: 4.28.2
       caniuse-lite: 1.0.30001787
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.10
+      postcss: 8.5.12
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -10201,7 +10201,7 @@ snapshots:
 
   postcss-value-parser@4.2.0: {}
 
-  postcss@8.5.10:
+  postcss@8.5.12:
     dependencies:
       nanoid: 3.3.11
       picocolors: 1.1.1
@@ -10593,45 +10593,45 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  sst-darwin-arm64@4.11.0:
+  sst-darwin-arm64@4.12.2:
     optional: true
 
-  sst-darwin-x64@4.11.0:
+  sst-darwin-x64@4.12.2:
     optional: true
 
-  sst-linux-arm64@4.11.0:
+  sst-linux-arm64@4.12.2:
     optional: true
 
-  sst-linux-x64@4.11.0:
+  sst-linux-x64@4.12.2:
     optional: true
 
-  sst-linux-x86@4.11.0:
+  sst-linux-x86@4.12.2:
     optional: true
 
-  sst-win32-arm64@4.11.0:
+  sst-win32-arm64@4.12.2:
     optional: true
 
-  sst-win32-x64@4.11.0:
+  sst-win32-x64@4.12.2:
     optional: true
 
-  sst-win32-x86@4.11.0:
+  sst-win32-x86@4.12.2:
     optional: true
 
-  sst@4.11.0:
+  sst@4.12.2:
     dependencies:
       '@aws/durable-execution-sdk-js': 1.0.2
       aws4fetch: 1.0.18
       jose: 5.2.3
       openid-client: 5.6.4
     optionalDependencies:
-      sst-darwin-arm64: 4.11.0
-      sst-darwin-x64: 4.11.0
-      sst-linux-arm64: 4.11.0
-      sst-linux-x64: 4.11.0
-      sst-linux-x86: 4.11.0
-      sst-win32-arm64: 4.11.0
-      sst-win32-x64: 4.11.0
-      sst-win32-x86: 4.11.0
+      sst-darwin-arm64: 4.12.2
+      sst-darwin-x64: 4.12.2
+      sst-linux-arm64: 4.12.2
+      sst-linux-x64: 4.12.2
+      sst-linux-x86: 4.12.2
+      sst-win32-arm64: 4.12.2
+      sst-win32-x64: 4.12.2
+      sst-win32-x86: 4.12.2
     transitivePeerDependencies:
       - aws-crt
 
@@ -10960,7 +10960,7 @@ snapshots:
       esbuild: 0.27.3
       fdir: 6.5.0(picomatch@4.0.3)
       picomatch: 4.0.3
-      postcss: 8.5.10
+      postcss: 8.5.12
       rollup: 4.59.0
       tinyglobby: 0.2.15
     optionalDependencies:
