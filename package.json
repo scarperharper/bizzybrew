@@ -94,7 +94,7 @@
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"knip": "^6.9.0",
-		"postcss": "^8.5.13",
+		"postcss": "^8.5.14",
 		"tailwindcss": "^4.2.4",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1",
