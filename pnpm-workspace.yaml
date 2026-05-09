@@ -1,6 +1,0 @@
-onlyBuiltDependencies:
-  - aws-sdk
-  - core-js
-  - esbuild
-  - fsevents
-  - unrs-resolver
