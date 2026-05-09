@@ -35,7 +35,7 @@ jobs:
                       ${{ runner.os }}-
 
             - name: Enable Corepack
-              run: corepack enable && corepack prepare pnpm@latest
+              run: corepack enable && corepack prepare pnpm@10
 
             - name: Configure AWS Credentials
               uses: aws-actions/configure-aws-credentials@main
