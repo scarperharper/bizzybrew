@@ -4,10 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-overrides:
-  '@modelcontextprotocol/sdk@<1.25.2': '>=1.25.2'
-  hono@<4.11.5: '>=4.11.5'
-
 importers:
 
   .:
