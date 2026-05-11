@@ -1,6 +1,4 @@
-onlyBuiltDependencies:
-  - aws-sdk
-  - core-js
-  - esbuild
-  - fsevents
-  - unrs-resolver
+allowBuilds:
+  esbuild: false
+  unrs-resolver: false
+neverBuiltDependencies: []

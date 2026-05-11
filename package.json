@@ -44,7 +44,7 @@
 		"@react-router/fs-routes": "^7.13.0",
 		"@react-router/node": "7.13.0",
 		"@react-router/serve": "7.13.0",
-		"@supabase/ssr": "^0.10.2",
+		"@supabase/ssr": "^0.10.3",
 		"@supabase/supabase-js": "latest",
 		"@tailwindcss/postcss": "^4.2.4",
 		"@tanstack/react-table": "^8.21.3",
@@ -57,19 +57,19 @@
 		"echarts": "^6.0.0",
 		"echarts-for-react": "^3.0.6",
 		"framer-motion": "^12.38.0",
-		"isbot": "^5.1.39",
+		"isbot": "^5.1.40",
 		"lucide-react": "^1.14.0",
 		"next-themes": "^0.3.0",
 		"node@latest": "link:remix-run/node@latest",
-		"react": "^19.2.5",
-		"react-day-picker": "^9.14.0",
-		"react-dom": "^19.2.5",
+		"react": "^19.2.6",
+		"react-day-picker": "^10.0.0",
+		"react-dom": "^19.2.6",
 		"react-number-format": "^5.4.5",
 		"react-router": "^7.13.0",
 		"react-wrap-balancer": "^1.1.1",
 		"remix-utils": "^9.3.1",
 		"sonner": "^2.0.7",
-		"sst": "4.13.0",
+		"sst": "4.13.1",
 		"tailwind-merge": "^3.5.0",
 		"tailwindcss": "^4.2.4",
 		"tailwindcss-animate": "^1.0.7",
@@ -81,7 +81,7 @@
 	},
 	"devDependencies": {
 		"@react-router/dev": "7.13.0",
-		"@types/node": "^25.6.0",
+		"@types/node": "^25.6.2",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@typescript-eslint/eslint-plugin": "^6.21.0",
@@ -93,17 +93,11 @@
 		"eslint-plugin-jsx-a11y": "^6.10.2",
 		"eslint-plugin-react": "^7.37.5",
 		"eslint-plugin-react-hooks": "^7.1.1",
-		"knip": "^6.9.0",
+		"knip": "^6.12.1",
 		"postcss": "^8.5.14",
 		"tailwindcss": "^4.2.4",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.1",
 		"vite-tsconfig-paths": "^6.1.1"
-	},
-	"pnpm": {
-		"overrides": {
-			"@modelcontextprotocol/sdk@<1.25.2": ">=1.25.2",
-			"hono@<4.11.4": ">=4.11.4"
-		}
 	}
 }

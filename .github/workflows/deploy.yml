@@ -44,7 +44,7 @@ jobs:
                   aws-region: eu-west-2
 
             - name: Install dependencies
-              run: pnpm i --frozen-lockfile
+              run: pnpm --version && pnpm i --frozen-lockfile
 
             - name: Remove conflicting Pulumi installations
               run: |
