@@ -15,8 +15,8 @@ importers:
         specifier: ^1.19.2
         version: 1.19.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
       '@conform-to/zod':
-        specifier: ^1.19.1
-        version: 1.19.1(zod@4.4.3)
+        specifier: ^1.19.2
+        version: 1.19.2(zod@4.4.3)
       '@heroicons/react':
         specifier: ^2.2.0
         version: 2.2.0(react@19.2.6)
@@ -562,9 +562,6 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  '@conform-to/dom@1.19.1':
-    resolution: {integrity: sha512-h4/T04zgASuiHMVEiXiyQA4jIW9zhpVFbp0HrWCQUDBxd8Zc1JbTarR7cuJyzkmqshC4tdm4VKIHguLp+7AYCw==}
-
   '@conform-to/dom@1.19.2':
     resolution: {integrity: sha512-CzuY8tP2hp4K15NpvVRHn4O5LE8QVT6I5D3Cjns8/4JMJ8AnlUmswhj3O5dcPWA3vJcTJgNhI/4xDjd4bN4Pwg==}
 
@@ -574,8 +571,8 @@ packages:
       react: '>=18'
       react-dom: '>=18'
 
-  '@conform-to/zod@1.19.1':
-    resolution: {integrity: sha512-S/C+Byhk87RdutjCuxhKcDf9lrmTx0V1OrtZPt5zrVG3RqcXVZz3NvLLZ7pNqdSg5DHGvuzPuotGfmPVu936ow==}
+  '@conform-to/zod@1.19.2':
+    resolution: {integrity: sha512-+gHFXv/U54hWhH0fKWG1so+JY+XBrSUtdNueW1YZhcMJ2BqOuT5ieiWgXQtj+B2KCKsNCc48Gk7s4phNoNdEJQ==}
     peerDependencies:
       zod: ^3.21.0 || ^4.0.0
 
@@ -5832,8 +5829,6 @@ snapshots:
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
 
-  '@conform-to/dom@1.19.1': {}
-
   '@conform-to/dom@1.19.2': {}
 
   '@conform-to/react@1.19.2(react-dom@19.2.6(react@19.2.6))(react@19.2.6)':
@@ -5842,9 +5837,9 @@ snapshots:
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
 
-  '@conform-to/zod@1.19.1(zod@4.4.3)':
+  '@conform-to/zod@1.19.2(zod@4.4.3)':
     dependencies:
-      '@conform-to/dom': 1.19.1
+      '@conform-to/dom': 1.19.2
       zod: 4.4.3
 
   '@date-fns/tz@1.4.1': {}
