@@ -167,9 +167,6 @@ importers:
       react:
         specifier: ^19.2.6
         version: 19.2.6
-      react-day--picker-10.0.1:
-        specifier: link:origin/dependabot/npm_and_yarn/react-day--picker-10.0.1
-        version: link:origin/dependabot/npm_and_yarn/react-day--picker-10.0.1
       react-day-picker:
         specifier: ^10.0.0
         version: 10.0.0(react@19.2.6)
