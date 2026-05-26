@@ -69,7 +69,7 @@
 		"react-wrap-balancer": "^1.1.1",
 		"remix-utils": "^9.3.1",
 		"sonner": "^2.0.7",
-		"sst": "4.14.1",
+		"sst": "4.14.3",
 		"supabase-js-2.106.2": "link:origin/dependabot/npm_and_yarn/supabase/supabase-js-2.106.2",
 		"tailwind-merge": "^3.6.0",
 		"tailwindcss": "^4.3.0",
