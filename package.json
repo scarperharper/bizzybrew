@@ -47,6 +47,7 @@
 		"@supabase/ssr": "^0.10.3",
 		"@supabase/supabase-js": "latest",
 		"@tailwindcss/postcss": "^4.3.0",
+		"@tailwindcss/vite": "^4.3.0",
 		"@tanstack/react-table": "^8.21.3",
 		"@tremor/react": "^3.18.7",
 		"autoprefixer": "10.5.0",
@@ -100,7 +101,6 @@
 		"postcss": "^8.5.15",
 		"tailwindcss": "^4.3.0",
 		"typescript": "^5.9.3",
-		"vite": "^8.0.16",
-		"vite-tsconfig-paths": "^6.1.1"
+		"vite": "^8.0.16"
 	}
 }
