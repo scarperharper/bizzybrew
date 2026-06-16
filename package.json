@@ -50,6 +50,7 @@
 		"@tanstack/react-table": "^8.21.3",
 		"@tremor/react": "^3.18.7",
 		"autoprefixer": "10.5.0",
+		"bizzybrew": "link:",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"cmdk": "^1.1.1",
