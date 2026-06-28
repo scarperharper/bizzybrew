@@ -46,10 +46,8 @@
 		"@react-router/serve": "8.0.1",
 		"@supabase/ssr": "^0.12.0",
 		"@supabase/supabase-js": "latest",
-		"@tailwindcss/postcss": "^4.3.0",
 		"@tanstack/react-table": "^8.21.3",
 		"@tremor/react": "^3.18.7",
-		"autoprefixer": "10.5.0",
 		"bizzybrew": "link:",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
@@ -82,12 +80,12 @@
 	},
 	"devDependencies": {
 		"@react-router/dev": "8.0.1",
+		"@tailwindcss/vite": "^4.3.1",
 		"@types/node": "^25.9.1",
 		"@types/react": "^19.2.16",
 		"@types/react-dom": "^19.2.3",
 		"@typescript-eslint/eslint-plugin": "^8.61.1",
 		"@typescript-eslint/parser": "^8.61.1",
-		"autoprefixer": "^10.5.0",
 		"eslint": "^10.5.0",
 		"eslint-import-resolver-typescript": "^4.4.5",
 		"eslint-plugin-import": "^2.32.0",
@@ -96,7 +94,6 @@
 		"eslint-plugin-react-hooks": "^7.1.1",
 		"knip": "^6.16.1",
 		"postcss": "^8.5.15",
-		"tailwindcss": "^4.3.0",
 		"typescript": "^6.0.3",
 		"vite": "^8.0.16"
 	}
